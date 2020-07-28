@@ -119,8 +119,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|
-|ancestry|integer||
+|name|string|null: false|
+|ancestry|string||
 
 ### Association
 
