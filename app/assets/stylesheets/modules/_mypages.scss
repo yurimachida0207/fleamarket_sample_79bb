@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+.mypage-wrapper{
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  background-color: lightgray;
+  @include -height-width(100vh, 100vw);
+  display: flex;
+  
+  .sidelist{
+    @include -height-width(calc(100vh - 100px), 250px);
+    background-color: white;
+    margin:50px 0px 100px 100px;
+    table{
+      @include -height-width(200px,250px);
+
+      td.list{
+        @include -height-width(50px,250px);
+        background-color: #fff;
+        color:black;
+        border-bottom: 1px solid rgb(60,202,206);
+
+        .tabel-btn{
+          display: block;
+          text-decoration: none;
+          color:rgb(51,51,51);
+        }
+
+        .tabel-btn:hover{
+          opacity: 0.7;
+        }
+      }
+
+      td.list:hover{
+        background-color:rgb(238, 236, 236);
+      }
+    }
+  }
+
+  .contents{
+    @include -height-width(calc(100vh - 100px), calc(100vw - 300px));
+    background-color: red;
+    margin:50px 0px 0px 50px;
+  }
+}

@@ -1,0 +1,29 @@
+//マイページのコンテンツの左側のメニューバー
+.sidelist
+  %table
+    %tr
+      %td.list.mypage
+        = link_to "　マイページ", "#", class:"tabel-btn"
+    %tr
+      %td.list.listed-products
+        = link_to "　出品した商品", "#", class:"tabel-btn"
+        
+    %tr
+      %td.list.purchased-product
+        = link_to "　購入した商品", "#", class:"tabel-btn"
+    
+    %tr  
+      %td.list.purchased-product
+        = link_to "　出品する", "#", class:"tabel-btn"
+
+    %tr
+      %td.list.notice
+        = link_to "　お知らせ", "#", class:"tabel-btn"
+
+    %tr
+      %td.list.payment
+        = link_to "　支払い方法", "payment", class:"tabel-btn"
+
+    %tr
+      %td.list.logout
+        = link_to "　ログアウト", "logout", class:"tabel-btn"

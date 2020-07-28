@@ -1,0 +1,124 @@
+.ExhibitionWrapper
+  .ExhibitionHeader
+    = link_to image_tag('logo.svg', alt: 'ヘッダーロゴ'), "/", class: "ExhibitionHeaderLogo"
+  .ExhibitionBox
+    = form_with model: @product, local: true, class: "ExhibitionForm" do |f|
+      .ImageForm
+        .ImageLabel
+          %label 出品画像
+          %span 必須
+        %p.ImageInfo 最大10枚までアップロードできます
+        .ImageBox
+          = f.label :image, class: 'FileUpload' do
+            .ImageDescription
+              = icon('fas', 'camera', class: 'aaa')
+              %p ドラッグアンドドロップ
+              %p またはクリックしてファイルをアップロード
+            = f.file_field :image, class: "File"
+      .ExplanationForm
+        .FormLabel
+          %label 商品名
+          %span 必須
+        = f.text_field :name, placeholder:"40文字まで", class: "InputForm"
+        .FormLabel
+          %label 商品の説明
+          %span 必須
+        = f.text_area :description, class: "InputForm-TextArea"
+        .WordCountBox
+          %span.WordCount 0/1000
+      .DetailsForm
+        %p.DetailsTitle 商品の詳細
+        .FormLabel
+          %label カテゴリー
+          %span 必須
+        .CategoryBox
+          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
+        /  = f.select :category, Product.categories.keys, {}, {class: "SelectForm"}
+        .CategoryBox
+          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
+        /  = f.select :category, Product.categories.keys, {}, {class: "SelectForm"}
+        .CategoryBox
+          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
+        /  = f.select :category, Product.categories.keys, {}, {class: "SelectForm"}
+        .FormLabel
+          %label ブランド
+          %span.other-span 任意
+        = f.text_field :brand, placeholder:"例） シャネル",  class: "InputForm"
+        .FormLabel
+          %label 商品の状態
+          %span 必須
+        .ConditionBox
+          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
+        /   = f.select :condition, Product.conditions.keys, {}, {class: "SelectForm"}
+      .ShippingForm
+        .AboutShip
+          %p.ShipLink 配送について
+          =link_to '#', class: "HelpLink" do
+            = icon('far', 'question-circle', class: 'LinkIcon')
+        .FormLabel
+          %label 配送量の負担
+          %span 必須
+        .PostagePayerBox
+          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
+        / = f.select :postage_payer, Product.postage_payers.keys, {}, {class: "SelectForm"}
+        .FormLabel
+          %label 発送元の地域
+          %span 必須
+        .ShipFromBox
+          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
+        / = f.select :ship_from, Product.ship_froms.keys, {}, {class: "SelectForm"}
+        .FormLabel
+          %label 発送までの日数
+          %span 必須
+        .ShipPreparationBox
+          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
+        / = f.select :ship_preparation, Product.ship_preparations, {}, {class: "SelectForm"}
+      .PriceForm
+        .PriceBox
+          .PriceTitle
+            .PriceRange 価格（¥300〜9,999,999）
+            =link_to '#', class: "AboutPriceLink" do
+              = icon('far', 'question-circle', class: 'LinkIcon')
+          .PriceSelectBox
+            .PriceLabelBox
+              %label 販売価格
+              %span 必須
+            .Yen ¥
+            .PriceFormBox
+              = f.number_field :price, placeholder: '0', class: "PriceSelect"
+        .SalesCommissionBox
+          .CommissionTitle
+            %p 販売手数料（10%)
+          .SalesCommission
+            ー
+        .SalesProfit
+          .CommissionTitle
+            %p 販売利益
+          .SalesCommission
+            ー
+      .ExhibitionButtons
+        = f.submit '出品する', class: 'ExhibitionBTN'
+        = f.submit '下書きに保存', class: 'SaveBTN'
+        = link_to 'もどる', '#', class: 'BackLink'
+      .AttentionBox
+        .AttentionText
+          禁止されている
+          = link_to '行為', '#'
+          および
+          = link_to '出品物', '#'
+          を必ずご確認ください。
+          = link_to '偽ブランド品', '#'
+          や
+          = link_to '盗品物', '#'
+          などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+          = link_to '加盟店規約', '#'
+          に同意したことになります。
+  .ExhibitionFooter
+    %ul.Info
+      %li
+        = link_to 'プライバシーポリシー', '#'
+      %li.CenterInfo
+        = link_to 'フリマ利用規約', '#'
+      %li
+        = link_to '特定商取引に関する表記', '#'
+    = link_to image_tag('logo-white.svg', alt: 'フッターロゴ'), "/", class: "ExhibitionFooterLogo"
