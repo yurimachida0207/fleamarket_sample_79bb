@@ -1,0 +1,434 @@
+* {
+  box-sizing: border-box;
+}
+body{
+  position: relative;
+  min-height: 100%;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  line-height: 1;
+  background: rgb(245, 245, 245);
+  noscript{
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+  }
+  .single-container{
+    padding: 0 0 220px;
+    .single-header{
+      height: 128px;
+      h1.header{
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+        .link{
+          width: 185px;
+          height: 49px;
+          line-height: 49px;
+          .mercari{
+            width: 185px;
+            height: 49px;
+          }
+        }
+        .progress-bar.singup-bar{
+          padding: 40px 0 0 44px;
+          border: 0;
+        }
+      }
+    }
+    .single-main{
+      display: block;
+      .l-single-container{
+        width: 700px;
+        margin: 0 auto;
+        background-color: #fff;
+        .l-single-head.registration{
+          font-size: 22px;
+          padding: 32px;
+          font-weight: 600;
+          text-align: center;
+        }
+        .l-single-inner{
+          padding: 24px 16px 40px;
+          input{
+            border: 0;
+            outline: 0;
+            font-family: inherit;
+          }
+          .l-single-content{
+            max-width: 343;
+            .form-group.nickname{
+              margin: 0;
+              label{
+                font-weight: 600;
+              }
+              .form-require{
+                background: #ea352d;
+              }
+              .input-default{
+                width: 100%;
+                margin: 8px 0 0;
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+              }
+            }
+            .form-group.email{
+              margin: 24px 0 0;
+              label{
+                font-weight: 600;
+              }
+              .form-require{
+                background: #ea352d;
+              }
+              .input-default{
+                width: 100%;
+                margin: 8px 0 0;
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+              }
+              input{
+                border: 0;
+                outline: 0;
+                font-family: inherit;
+              }
+            }
+            .form-group.form-password-revelation{
+              margin: 24px 0 0;
+              label{
+                font-weight: 600;
+              }
+              .form-require{
+                background: #ea352d;
+              }
+              .input-default{
+                width: 100%;
+                margin: 8px 0 0;
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+              }
+              .form-info-text{
+                margin: 8px 0 0;
+                line-height: 1.5;
+              }
+              .form-password-revelation-taggle{
+                background-repeat: no-repeat;
+                margin: 0;
+                padding: 0;
+                .checkbox-default{
+                  margin: 16px 0 0;
+                  position: relative;
+                  font-size: 0;
+                  .check_box{
+                  }
+                  .icon-check{
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    z-index: 1;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 2px;
+                    background: #fff;
+                    border: 1px solid #ccc;
+                    font-size: 10px;
+                    line-height: 17px;
+                    text-align: center;
+                    color: #fff;
+                    vertical-align: middle;
+                    -webkit-transition: all ease-out .3s;
+                    transition: all ease-out .3s;
+                    -webkit-transform: translate(0, -50%);
+                    transform: translate(0, -50%);
+                  }
+                }
+                .form-password-revelation-revealed-password-container{
+                  display: none;
+                  line-height: 1.5;
+                  font-size: 16px;
+                  font-weight: 500;
+                  font-family: monospace;
+                  margin: 14px 0;
+                  word-break: break-all;
+                  overflow-wrap: break-word;
+                  .form-password-revelation-revealed-password{
+                    display: none;
+                    background-color: #f5f5f5;
+                    padding: 4px 8px;
+                  }
+                }
+              }
+            }
+            .form-group.confirmation{
+              margin: 24px 0 0;
+              .text-left{
+                font-size: 16px;
+                font-weight: 600;
+              }
+              .l-single-text{
+                margin: 8px 0 0;
+                padding: 0;
+              }
+            }
+            .form-group.name-kanji{
+              margin: 24px 0 0;
+              div{
+                background-repeat: no-repeat;
+                margin: 0;
+                padding: 0;
+                .kanji{
+                  font-weight: 600;
+                }
+                .form-require{
+                  background: #ea352d;
+                }
+              }
+              .input-default.half1{
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+              }
+              .input-default.half2{
+                margin: 8px 20px 0;
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+              }
+            }
+            .form-group.name-kana{
+              margin: 24px 0 0;
+              div{
+                background-repeat: no-repeat;
+                margin: 0;
+                padding: 0;
+                .kana{
+                  font-weight: 600;
+                }
+                .form-require{
+                  background: #ea352d;
+                }
+              }
+              .input-default.half3{
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+              }
+              .input-default.half4{
+                margin: 8px 20px 0;
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+              }
+            }
+            .form-group.birthday{
+              margin: 24px 0 0;
+              .tanjyoubi{
+                font-weight: 600;
+              }
+              .form-require{
+                background: #ea352d;
+              }
+              .birthday-select-wrap{
+                background-repeat: no-repeat;
+                margin: 0;
+                padding: 0;
+                .select-wrap{
+                  margin: 10px 0;
+                  .icon-arrow-bottom{
+                    right: 12px;
+                  }
+                  .year{
+                    height: 48px;
+                    padding: 10px 16px 8px;
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                    background: #fff;
+                    line-height: 1.5;
+                    font-size: 16px;
+                  }
+                  .month{
+                    height: 48px;
+                    padding: 10px 16px 8px;
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                    background: #fff;
+                    line-height: 1.5;
+                    font-size: 16px;
+                  }
+                  .day{
+                    height: 48px;
+                    padding: 10px 16px 8px;
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                    background: #fff;
+                    line-height: 1.5;
+                    font-size: 16px;
+                  }
+                }
+              }
+              input{
+                border: 0;
+                outline: 0;
+                font-family: inherit;
+              }
+              .clearfit{
+                background-repeat: no-repeat;
+                margin: 0;
+                padding: 0;
+              }
+              .form-info-text{
+                margin: 8px 0 0;
+                line-height: 1.5;
+              }
+            }
+          }
+          .l-single-content2{
+            max-width: 343px;
+            input{
+              border: 0;
+              outline: 0;
+              font-family: inherit;}
+            .submit{
+              margin: 40px 0;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              border-radius: 4px;
+              border: 1px solid transparent;
+              -webkit-transition: all ease-out .3s;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center;
+            }
+            .form-group.text-right{
+              margin: 40px 0 0;
+              p{
+                .identitiy{
+                  color: #0099e8; 
+                  text-decoration: none;
+                  .icon-arrow-right{
+                    display: inline-block;
+                    font-family: 'icon-font';
+                    speak: none;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-variant: normal;
+                    text-transform: none;
+                    line-height: 1;
+                    -webkit-font-smoothing: antialiased;
+                  }
+                }
+              }
+            }
+            .form-group.receptcha_term{
+              margin: 24px 0 0;
+              p{
+                color: #888888;
+                font-size: 12px;
+                .privacy{
+                  text-decoration: none;
+                }
+                and{}
+                .terms-service{
+                  text-decoration: none;
+                }
+                apply{}
+              }
+            }
+          }
+        }
+      }
+    }
+    .single-footer{
+      width: 456px;
+      height: 220px;
+      margin: 0 auto;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      height: 250px;
+      padding: 40px 0;
+      text-align: center;
+      nav{
+        .clearfit{
+          font-size: 13px;
+          margin: 20px;
+          li{
+            display: inline-block;
+            .privacy-kana{
+              display: block;
+              color: #333;
+              text-decoration: none;
+            }
+          }
+          li{
+            .mercari-kiyaku{
+              margin: 0 10px;
+              display: block;
+              color: #333;
+              text-decoration: none;
+            }
+          }
+          li{
+            .hyouki{
+              display: block;
+              color: #333;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .logo-footer{
+        width: 80px;
+        height: 65px;
+        margin: 40px auto 0;
+        .logo-gray{
+          vertical-align: middle;
+        }
+      }
+      p{
+        margin: 8px 0 0;
+        small{
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root 'items#index'
+  root 'new_member#index'
+  # get 'items#index'
 end
