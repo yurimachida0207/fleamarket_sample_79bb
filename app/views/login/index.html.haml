@@ -1,0 +1,26 @@
+.Single__container
+  .Single__header
+    .Single__header--logo
+      =image_tag "logo.svg"
+  .Single-main
+    .Login-panel
+      .Login-no-account
+        %pアカウントをお持ちでない方はこちら
+        = link_to "新規会員登録", "#",class:"Login-no-account__Login" 
+      .Login-form-inner
+        = link_to "https://google.com/", class: "Login-form-inner__btn Login-form-inner__btn--google" do
+          = icon('fab', 'google', class: "Login-form-inner__btn--icon")
+          Googleでログイン
+        = link_to "https://www.facebook.com/", class: "Login-form-inner__btn Login-form-inner__btn--facebook" do
+          = icon('fab', 'facebook-square', class: "Login-form-inner__btn--icon")
+          Facebookでログイン
+        = link_to "https://apple.com/", class: "Login-form-inner__btn Login-form-inner__btn--apple" do
+          = icon('fab', 'apple', class: "Login-form-inner__btn--icon")
+          Appleでログイン
+      .Form
+        .Form__group
+          %Input.Form__group--input-text{:type=>"email",:name=>"email",:placeholder=>"メールアドレス",:value=>""}/
+        .Form__group
+          %Input.Form__group--input-text{:type=>"password",:name=>"password",:placeholder=>"パスワード",:value=>""}/
+        = link_to "ログイン","#",class:"Form__button" 
+        = link_to "パスワードをお忘れの方","#",class:"Form__coments"
