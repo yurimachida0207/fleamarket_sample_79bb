@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'toppages#index'
+  # root 'toppages#index'
+  root 'show_items#index'
 
   resources :login, only: [:index, :new]
   resources :toppages,only: :index
@@ -8,5 +9,5 @@ Rails.application.routes.draw do
   resources :toppages, only: :index
   resources :transactions, only: :index
   resources :mypages, only: :index
-
+  resources :show_items,only: :index
 end
