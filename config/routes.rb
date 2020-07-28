@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :toppages, only: :index
   resources :transactions, only: :index
   resources :mypages, only: :index
-
+  resources :show_items,only: :index
 end
