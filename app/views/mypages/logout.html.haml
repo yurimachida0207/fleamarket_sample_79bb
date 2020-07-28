@@ -1,1 +1,5 @@
 .logout-wrapper
+  = render 'mypages/side_bar'
+  .contents
+    .contents__logout
+      = link_to "ログアウトする", "#", method: :delete, class: 'logout-btn'
