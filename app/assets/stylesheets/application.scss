@@ -2,18 +2,17 @@
   box-sizing: border-box;
 }
 @import "reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "modules/login_new";
+@import "modules/index";
 @import "modules/mixin";
 @import "modules/toppages";
 @import "modules/header";
 @import "modules/footer";
 @import "modules/purchaseBtn";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-
 @import "modules/transactions";
 @import "modules/mypages";
 @import "modules/logout";
 @import "modules/payments";
-
 @import "modules/new_items";
-

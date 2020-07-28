@@ -1,0 +1,72 @@
+// Place all the styles related to the login controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.Header {
+  height: 90px;
+  border-bottom:20px solid whitesmoke;
+  background-color:rgb(245,245,245);
+  color: #ffffff;
+  &__logo {
+    text-align: center;
+    font-size: 36px;
+    line-height: 40px;
+    padding-top: 20px;
+    align-items: center;
+  }
+}
+.Contents {
+  height: calc(100vh - 90px - 20px);
+  width:900px;
+  margin: 0 auto;
+  background-color: #fffacd;
+  &__message{
+    padding: 40px;
+    color:black;
+    font-size:30px;
+    text-align: center;
+  }
+  &__btn{
+    display: block;
+    height: 80px;
+    width :360px;
+    margin:0 auto 50px;
+    border-radius: 10px;
+    font-size:20px;
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 80px;
+    &--icon{
+      padding-right:20px;
+    }
+    &--mail{
+      background-color: red;
+    }
+    &--google{
+      background-color: #00bfff;
+    btn--google{
+      color: black;
+    }
+    }
+    &--facebook{
+      background-color: blue;
+    }
+    &--apple{
+      background-color: black;
+    }
+  }
+
+  .Form-group{
+    height: 42px;
+    width: 343px;
+    margin: 0 0 0 280px;
+    .Form__info--text{
+      font-size: 17px;
+      .Coments{
+        color: blue;
+        text-decoration: none;
+      }
+    }
+  }
+}
