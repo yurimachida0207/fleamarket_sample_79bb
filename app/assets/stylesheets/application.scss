@@ -1,4 +1,10 @@
+* {
+  box-sizing: border-box;
+}
 @import "reset";
 @import "modules/toppages";
+@import "modules/header";
+@import "modules/footer";
+@import "modules/purchaseBtn";
 @import "font-awesome-sprockets";
 @import "font-awesome";
