@@ -119,12 +119,13 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
+|name|string|
 |ancestry|integer||
-
 
 ### Association
 
 - has_many :items
+- has_ancestry
 
 ## imagesテーブル
 
