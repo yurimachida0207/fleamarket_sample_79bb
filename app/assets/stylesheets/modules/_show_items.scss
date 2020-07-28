@@ -261,7 +261,6 @@ _show.scss
         padding: 0;
         .productList{
           margin: 0 0 10px;
-          // float: left;
           width: calc(100% / 3);
           .link{
             display: block;
@@ -274,7 +273,6 @@ _show.scss
             figure.productList--img{
               background-color: #fff;
               .img{
-                // position: absolute;
                 top: 0;
                 left: 0;
                 right: 0;
