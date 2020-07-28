@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   get "mypages/index"
   get "mypages/logout"
   get "mypages/payment"
-  
 end
