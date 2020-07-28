@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   resources :transactions, only: :index
   resources :mypages, only: :index
 
-  # get "new_member/index"
-  # get "transactions/buy"
-  # get "mypages/index"
-  # get "mypages/logout"
-  # get "mypages/payment"
+  get "new_member/index"
+  get "transactions/buy"
+  get "mypages/index"
+  get "mypages/logout"
+  get "mypages/payment"
 
 end
