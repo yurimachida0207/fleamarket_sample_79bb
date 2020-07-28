@@ -80,7 +80,7 @@ Things you may want to cover:
 
 - belongs_to :user
 
-### credit_cardsテーブル
+## credit_cardsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -94,7 +94,7 @@ Things you may want to cover:
 
 - belongs_to :user
 
-### itemsテーブル
+## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -117,7 +117,7 @@ Things you may want to cover:
 - belongs_to :seller, class_name: 'User', foreign_key: 'seller_id'
 - belongs_to :buyer, class_name: 'User', foreign_key: 'buyer_id, optional: true'
 
-### categoriesテーブル
+## categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -128,7 +128,7 @@ Things you may want to cover:
 
 - has_many :items
 
-### imagesテーブル
+## imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -139,11 +139,14 @@ Things you may want to cover:
 
 - belongs_to :item
 
-### commentsテーブル
+## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |item_id|integer|null: false, foreign_key: true|
+
+### Association
+
 - belongs_to :user
 - belongs_to :item
 
