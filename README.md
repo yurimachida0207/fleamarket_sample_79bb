@@ -27,7 +27,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreignkey: true|
+|user_id|integer|null: false, foreign_key: true|
 |user_name|string|null: false|
 |email|string|null: false, unique: true|
 |password|integer|null: false|
@@ -37,7 +37,7 @@ Things you may want to cover:
 
 - has_many :items, dependent: destroy
 - has_one :destinations, dependent: destroy
-- has_one :user_profiels, dependent: destroy
+- has_one :user_profiles, dependent: destroy
 - has_one :credit_cards, dependent: destroy
 - has_many :buy_items, foreign_key: 'buyer_id', class_name: 'Item'
 - has_many :sell_items, foreign_key: 'seller_id', class_name: 'Item', -> { where("buyer_id is NULL") }
@@ -47,7 +47,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|null: false, foreignkey: true|
+|user_id|string|null: false, foreign_key: true|
 |last_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name|string|null: false|
@@ -64,7 +64,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreignkey: true|
+|user_id|integer|null: false, foreign_key: true|
 |ship_last_name|string|null: false|
 |ship_last_name_kana|string|null: false|
 |ship_first_name|string|null: false|
@@ -84,7 +84,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|null: false, foreignkey: true|
+|user_id|string|null: false, foreign_key: true|
 |card_number|integer|null: false|
 |card_month|integer|null: false|
 |card_year|integer|null: false|
@@ -132,7 +132,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|item_id|string|null: false, foreignkey: true|
+|item_id|string|null: false, foreign_key: true|
 |image|string|null: false|
 
 ### Association
