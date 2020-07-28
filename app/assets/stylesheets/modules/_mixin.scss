@@ -1,0 +1,14 @@
+//mixin記述用SCSSファイル
+
+//要素の縦横の長さを定義する
+@mixin -height-width($height,$width) {
+  height: $height;
+  width: $width;
+}
+
+//子要素を縦横中央に配置する
+@mixin vertical-and-horizontal-center(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
