@@ -12,4 +12,8 @@ Rails.application.routes.draw do
       get 'payment'
     end
   end
+
+  resources :login, only: [:index, :new]
+  resources :new_member, only: :index
+  resources :show_items,only: :index
 end
