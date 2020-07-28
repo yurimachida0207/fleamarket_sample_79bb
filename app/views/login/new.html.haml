@@ -1,0 +1,27 @@
+.Header
+  .Header__logo
+    =image_tag "logo.svg"
+
+.Contents
+  .Contents__message
+    新規会員登録
+  = link_to "＃", class: "Contents__btn Contents__btn--mail" do
+    = icon('fa', 'envelope',  class: "Contents__btn--icon")
+    メールアドレス
+  = link_to "https://google.com/", class: "Contents__btn Contents__btn--google" do
+    = icon('fab', 'google', class: "Contents__btn--icon")
+    Google
+  = link_to "https://www.facebook.com/", class: "Contents__btn Contents__btn--facebook" do
+    = icon('fab', 'facebook-square', class: "Contents__btn--icon")
+    Facebook
+  = link_to "https://apple.com/", class: "Contents__btn Contents__btn--apple" do
+    = icon('fab', 'apple', class: "Contents__btn--icon")
+    Apple
+  .Form-group
+    .Form__info--text
+      登録することで
+      =link_to "利用規約","/jp/tos/",class:"Coments" 
+      と
+      =link_to "プライバシーポリシー","/jp/privacy",class:"Coments" 
+      に同意したものとみなされます。
+    
