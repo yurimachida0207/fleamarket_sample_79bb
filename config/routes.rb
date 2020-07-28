@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :login, only: [:index, :new]
-  root 'items#index'
+
   root 'toppages#index'
-  get "transactions/buy"
-  get "mypages/index"
-  get "mypages/logout"
-  get "mypages/payment"
+
+  resources :login, only: [:index, :new]
+  resources :toppages,only: :index
+  resources :new_member, only: :index
+  resources :toppages, only: :index
+  resources :transactions, only: :index
+  resources :mypages, only: :index
+
 end
