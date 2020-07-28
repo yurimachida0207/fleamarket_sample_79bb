@@ -27,18 +27,16 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
 |user_name|string|null: false|
 |email|string|null: false, unique: true|
 |password|integer|null: false|
-|group_id|integer|null: false|
 
 ### Association
 
 - has_many :items, dependent: destroy
-- has_one :destinations, dependent: destroy
-- has_one :user_profiles, dependent: destroy
-- has_one :credit_cards, dependent: destroy
+- has_one :destination, dependent: destroy
+- has_one :user_profile, dependent: destroy
+- has_one :credit_card, dependent: destroy
 - has_many :buy_items, foreign_key: 'buyer_id', class_name: 'Item'
 - has_many :sell_items, foreign_key: 'seller_id', class_name: 'Item', -> { where("buyer_id is NULL") }
 - has_many :sold_items, foreign_key: 'seller_id, class_name: 'Item', -> { where("buyer_id is not NULL") }
@@ -99,7 +97,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |item_name|string|null: false|
-|description|string|null: false|
+|description|text|null: false|
 |brand|string|null: false|
 |condition|string|null: false|
 |postage_payer|string|null: false|
@@ -144,6 +142,7 @@ Things you may want to cover:
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |item_id|integer|null: false, foreign_key: true|
+|comment|text|null: false, foreign_key: true|
 
 ### Association
 
