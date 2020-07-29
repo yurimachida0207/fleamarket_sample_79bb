@@ -2,6 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   root 'toppages#index'
 
+  resources :signup do
+    collection do
+      get 'step1'
+      get 'step2'
+      get 'step3'
+      get 'done'
+    end
+  end
+
   resources :transactions do
     get 'buy'
   end
@@ -18,6 +27,7 @@ Rails.application.routes.draw do
   resources :login, only: [:index, :new]
   resources :new_member, only: :index
   resources :toppages, only: :index
-  resources :show_items,only: :index
+  resources :show_items, only: :index
+  resources :items, only: :new
 
 end
