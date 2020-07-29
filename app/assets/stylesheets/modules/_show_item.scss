@@ -1,10 +1,8 @@
-_show.scss
-
 * {
   box-sizing: border-box;
 }
 .main{
-  background-color: #f8f8f8;
+  background-color: whitesmoke;
   .showMain{
     padding: 40px;
     margin: 0 auto;
@@ -134,7 +132,7 @@ _show.scss
                 border-radius: 40px;
                 color: #3CCACE;
                 border: 1px solid #ffb340;
-                i.fa.fa-star{
+                .fa.fa-star{
                 }
               }
             }
@@ -154,8 +152,36 @@ _show.scss
                 }
               }
             }
-           }
           }
+          .my_page_btn{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+              .edit_btn{
+                text-decoration: none;
+                text-align: center;
+                margin: 20px 0;
+                line-height: 48px;
+                background-color: #3CCACE;
+                border: 1px solid #3CCACE;
+                color: #fff;
+                width: 60%;
+                font-size: 18px;
+                border-radius: 100px;
+              }
+              .destroy_btn{
+                text-align: center;
+                text-decoration: none;
+                line-height: 48px;
+                background-color: #3CCACE;
+                border: 1px solid #3CCACE;
+                color: #fff;
+                width: 60%;
+                font-size: 18px;
+                border-radius: 100px;
+              }
+          }
+        }
         .commentBox{
           padding: 24px;
           background-color: #fff;
