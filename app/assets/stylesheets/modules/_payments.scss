@@ -41,10 +41,10 @@
   .contents{
     @include -height-width(calc(100vh - 100px), calc(100vw - 700px));
     margin:50px 0px 0px 50px;
-    background-color: lightsalmon;
+    background-color: #fff;
 
     .contents-head{
-      @include -height-width(50px, 700px);
+      @include -height-width(50px, calc(100vw - 700px));
       @include vertical-and-horizontal-center;
       align-items: center;
       border-bottom: 1px solid rgb(60,202,206);
@@ -54,17 +54,81 @@
       }
     }
 
-    .contents__payment-card{
-      @include -height-width(500px, 700px);
-      background-color: lime;
-      &__form{
+    .contents__credit-card{
+      @include -height-width(500px, calc(100vw - 1000px));
+      @include vertical-and-horizontal-center();
+      font-weight: 600;
+        
+      &__number{
+        @include -height-width(300px,400px);;
 
         .span{
-          font-size: 100px;
+          font-size: 14px;
+          margin: 0 0 0 4px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          vertical-align: top;
           background-color: red;
+        }
+
+        .input-number{
+          @include -height-width(48px,calc(100% - 10px));
+          padding: 10px 16px 8px;
+          margin: 8px 0 8px 0;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
         }
       }
 
+      ul.card-list{
+        display: flex;
+        img{
+          margin:12px 0 12px 12px;
+        }
+      }
+      
+      &__expiration{
+
+        &__wrap{
+
+          display: flex;
+          align-items: center;
+
+          span.expiration{
+            background-color: #fff;
+            color:black;
+            font-size: 14px;
+            font-weight: 400;
+          }
+          .input-expiration{
+            @include -height-width(48px,calc(50% - 2px));
+            border-radius:4px;
+            border: 1px solid #ccc;
+            margin-top:4px;
+          }
+        }
+      }
+
+      &__security-code{
+        margin:8px 0 0 0;
+      }
+
+      .content-bottom{
+        @include vertical-and-horizontal-center();
+        .add-btn{
+          @include -height-width(48px, 340px);
+          margin: 20px 0 0 0;
+          border:1px solid #ccc;
+          border-radius: 4px;
+          background-color: red;
+          color: #fff;
+        }
+      }
     }
   }
 }
