@@ -3,7 +3,7 @@
   %table
     %tr
       %td.list.mypage
-        = link_to "　マイページ", mypages_path, class:"tabel-btn"
+        = link_to "　マイページ", "#", class:"tabel-btn"
     %tr
       %td.list.listed-products
         = link_to "　出品した商品", "#", class:"tabel-btn"
@@ -22,8 +22,8 @@
 
     %tr
       %td.list.payment
-        = link_to "　支払い方法", payment_mypages_path, class:"tabel-btn"
+        = link_to "　支払い方法", "payment", class:"tabel-btn"
 
     %tr
       %td.list.logout
-        = link_to "　ログアウト", logout_mypages_path, class:"tabel-btn"
+        = link_to "　ログアウト", "logout", class:"tabel-btn"

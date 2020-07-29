@@ -39,8 +39,8 @@
   }
 
   .contents{
-    @include -height-width(calc(100vh - 100px), calc(100vw - 700px));
-    background-color: white;
+    @include -height-width(calc(100vh - 100px), calc(100vw - 300px));
+    background-color: red;
     margin:50px 0px 0px 50px;
   }
 }
