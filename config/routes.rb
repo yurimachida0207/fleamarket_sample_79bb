@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  # root 'toppages#index'
   root 'mypages#show'
+
   resources :login, only: [:index, :new]
   resources :toppages,only: :index
   resources :new_member, only: :index
