@@ -24,8 +24,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :login, only: [:index, :new]
-  resources :new_member, only: :index
+  resources :login, only: :index
   resources :toppages, only: :index
   resources :show_items, only: :index
   resources :items, only: :new
