@@ -10,11 +10,43 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      redirect_to root_path
-    else
+    unless @user.valid?
+      flash.now[:alert] = @user.errors.full_messages
       render :new and return
     end
+    session["devise.regist_data"] = {user: @user.attributes}
+    session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    @destination = @user.build_destination
+    render :new_destination
+  end
+
+  def create_destination
+    @user = User.new(session["devise.regist_data"]["user"])
+    @destination = Destination.new(destination_params)
+    unless @destination.valid?
+      flash.now[:alert] = @destination.errors.full_messages
+      render :new_destination and return
+    end
+    @user.build_destination(@destination.attributes)
+    @user.save
+    session["devise.regist_data"]["user"].clear
+    sign_in(:user, @user)
+  end
+  
+  protected
+  
+  def destination_params
+    params.require(:destination).permit(
+      :ship_last_name,
+      :ship_first_name,
+      :ship_last_name_kana,
+      :ship_first_name_kana,
+      :phone_number,
+      :zip_code,
+      :prefecture,
+      :address,
+      :second_address,
+    )
   end
 
   private
