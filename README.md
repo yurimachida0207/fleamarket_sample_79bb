@@ -2,16 +2,21 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|nickname|string|null: false|
 |email|string|null: false, unique: true|
-|password|integer|null: false|
+|password|string|null: false|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|birthday|date|null :false|
 
 ### Association
 
-- has_many :items, dependent: destroy
-- has_one :destination, dependent: destroy
-- has_one :user_profile, dependent: destroy
-- has_one :credit_card, dependent: destroy
+- has_many :items, dependent: :destroy
+- has_one :destination, dependent: :destroy
+- has_one :user_profile, dependent: :destroy
+- has_one :credit_card, dependent: :destroy
 - has_many :buy_items, foreign_key: 'buyer_id', class_name: 'Item'
 - has_many :sell_items, foreign_key: 'seller_id', class_name: 'Item', -> { where("buyer_id is NULL") }
 - has_many :sold_items, foreign_key: 'seller_id, class_name: 'Item', -> { where("buyer_id is not NULL") }
@@ -21,13 +26,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|string|null: false, foreign_key: true|
-|last_name|string|null: false|
-|last_name_kana|string|null: false|
-|first_name|string|null: false|
-|first_name_kana|string|null: false|
-|birth_year|integer|null: false|
-|birth_month|integer|null: false|
-|birth_day|integer|null: false|
 
 ### Association
 
@@ -37,17 +35,16 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|foreign_key: true|
 |ship_last_name|string|null: false|
 |ship_last_name_kana|string|null: false|
 |ship_first_name|string|null: false|
 |ship_first_name_kana|string|null: false|
-|phone_number|integer|null: false|
+|phone_number|bigint|null: false, unique: true|
 |zip_code|integer|null: false|
 |prefecture|string|null: false|
-|city|string|null: false|
-|adress|string|null: false|
-|second_adress|string||
+|address|string|null: false|
+|second_address|string||
 
 ### Association
 
@@ -83,9 +80,9 @@
 
 ### Association
 
-- has_many :images, dependent: destroy
-- has_many :comments, dependent: destroy
-- has_many :favorites, dependent: destroy
+- has_many :images, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :favorites, dependent: :destroy
 - belongs_to :category
 - belongs_to :seller, class_name: 'User', foreign_key: 'seller_id'
 - belongs_to :buyer, class_name: 'User', foreign_key: 'buyer_id, optional: true'
