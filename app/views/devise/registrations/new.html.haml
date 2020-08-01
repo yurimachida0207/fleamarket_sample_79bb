@@ -31,7 +31,7 @@
     %main.single-main
       %section.l-single-container
         %h2.l-single-head.registration 会員情報入力
-        = form_for @user, url: user_registration_path , method: :post, html: {class: 'l-single-inner'} do |f|
+        = form_for @user, url: user_registration_path , html: {class: 'l-single-inner'} do |f|
           %input(type="hidden")
           .l-single-content
             .form-group.nickname

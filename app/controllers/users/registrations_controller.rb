@@ -10,11 +10,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      redirect_to root_path
-    else
+    unless @user.valid?
+      flash.now[:alert] = @user.errors.full_messages
       render :new and return
     end
+    session["devise.regist_data"] = {user: @user.attributes}
+    session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    @address = @user.build_destination
+    render :new_destination
   end
 
   private
