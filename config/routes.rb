@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+  
   root 'toppages#index'
 
   resources :transactions do
@@ -16,7 +20,6 @@ Rails.application.routes.draw do
   end
 
   resources :login, only: [:index, :new]
-  resources :new_member, only: :index
   resources :toppages, only: :index
   resources :show_items,only: :index
 end
