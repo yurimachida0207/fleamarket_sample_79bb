@@ -71,3 +71,5 @@
         - if user_signed_in?
           = link_to destroy_user_session_path, method: :delete do
             ログアウト
+          = link_to '/mypages' do
+            マイページ
