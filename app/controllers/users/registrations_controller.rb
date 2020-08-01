@@ -9,13 +9,34 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    binding.pry
     @user = User.new(user_params)
+    if @user.save
+      redirect_to root_path
+    else
+      render :new and return
+    end
   end
 
   private
 
   def user_params
+    birthday = birthday_join
+    params.require(:user).permit(
+      :nickname, 
+      :email, 
+      :password,
+      :password_confirmation,
+      :last_name, 
+      :first_name,
+      :last_name_kana,
+      :first_name_kana,
+    ).merge(birthday: birthday) 
+  end
+
+  def birthday_join
+    date = params[:birthday] 
+    birthdate = Date.new(date["birthday(1i)"].to_i, date["birthday(2i)"].to_i, date["birthday(3i)"].to_i)  
+    birthdate.strftime("%Y-%m-%d")
   end
 
   # POST /resource
