@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'toppages#index'
 
   # resources :items do
   #   resources :comments,  only: [:create, :destroy]
@@ -15,9 +13,21 @@ Rails.application.routes.draw do
   #     get 'update_done' # これを追加
   #   end
   # end
-  # resources :transactions do
-  #   get 'buy'
-  # end
+  
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+  devise_scope :user do
+    get 'destinations', to: 'users/registrations#new_destination'
+    post 'destinations', to: 'users/registrations#create_destination'
+  end
+
+  root 'toppages#index'
+
+  resources :transactions do
+    get 'buy', to:'card#show'
+  end
 
   resources :mypages do
     collection do
@@ -30,7 +40,6 @@ Rails.application.routes.draw do
   end
 
   resources :login, only: [:index, :new]
-  resources :new_member, only: :index
   resources :toppages, only: :index
   resources :show_items,only: :index
   resources :items, only: [:index, :new, :edit, :update, :show]
