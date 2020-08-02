@@ -1,0 +1,15 @@
+-# = form_with model: @product, local: true do |f|
+-#   = f.text_field :name, placeholder: 'name'
+-#   #image-box
+-#     = f.fields_for :images do |i|
+-#       .group{ data: { index: i.index } }
+-#         = i.file_field :src, class: 'file'
+-#   = f.submit 'SEND'
+
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %title JavaScript
+  %body
+    %script{:src => "item.js"}

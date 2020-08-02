@@ -1,0 +1,425 @@
+* {
+  box-sizing: border-box;
+}
+@mixin LabelBox {
+  display: flex;
+  align-items: center;
+}
+@mixin ItemsLabel {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+@mixin ItemsSpan {
+  margin-left: 8px;
+  font-size: 12px;
+  padding: 0 4px;
+  background-color: #ff0211;
+  color: #fff;
+  border-radius: 2px;
+  display: block;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+@mixin InputForm{      
+  border: 1px solid #ccc;
+  border-radius: 4px;      
+  margin: 16px 0 32px 0;
+  width: 100%;
+  height: 48px;
+  padding:0 16px;
+
+}
+@mixin SelectForm {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 16px 0 32px 0;
+  width: 100%;
+  height: 48px;
+  padding: 0 56px 0 16px;
+}
+
+.ExhibitionWrapper {
+  color: rgb(74, 74, 74);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  background-color: rgb(245, 245, 245);
+  .ExhibitionHeader{
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ExhibitionBox {
+    width: 700px;
+    margin: 0px auto;
+    background-color: white;
+    .ExhibitionForm {
+      width: 100%;
+      .ImageForm {
+        padding: 40px;
+        border-bottom: 1px solid #efefef;
+        .ImageLabel {
+          @include LabelBox;
+        label {
+          @include ItemsLabel;
+        }
+        span {
+          @include ItemsSpan;
+        }
+        }
+        .ImageInfo {
+          margin-top: 16px;
+          font-size: 14px;
+          line-height: 1.4em;
+        }
+        .ImageBox{
+          margin-top: 16px;
+          height: 150px;
+          background-color: rgb(245, 245, 245);
+          border: 1px dashed rgb(204, 204, 204);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .ImageDescription{
+            text-align: center;
+            font-size: 12px;
+            margin-top: 40px;
+            .aaa {
+              font-size: 22px;
+              margin-bottom: 12px;
+            }
+          }
+          .FileUpload {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            .File{
+              display: none;
+            }
+          }
+        }
+      }
+      .ExplanationForm {
+        padding: 40px;
+        border-bottom: 1px solid #efefef;
+        .FormLabel {
+          @include LabelBox;
+        label {
+          @include ItemsLabel;
+        }
+        span {
+          @include ItemsSpan;
+        }
+        }
+        .InputForm{
+          @include InputForm
+        }
+        .Label-Description {
+          height: 19px;
+          align-items: center;
+          display: flex;
+          .FormLabel {
+            @include LabelBox;
+          label {
+            @include ItemsLabel;
+          }
+          span {
+            @include ItemsSpan;
+          }
+          }
+        }
+        .InputForm-TextArea{
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          margin-top: 16px;
+          width: 100%;
+          height: 154px;
+          padding: 13px 16px;
+        }
+        .WordCountBox{
+          text-align: right;
+          height: 12px;
+          margin-bottom: 16px;
+          .WordCount{
+            color: #888;            
+            font-size: 10px;
+          }
+        }
+      }
+      .DetailsForm {
+        padding: 40px;
+        border-bottom: 1px solid #efefef;
+        .DetailsTitle {
+          color: rgb(136, 136, 136);
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1.4em;
+          margin-bottom: 24px;
+        }
+        .FormLabel {
+          @include LabelBox;
+          margin-bottom: 16px;
+          label {
+            @include ItemsLabel;
+          }
+          span {
+            @include ItemsSpan;
+          }
+        }
+        .CategoryBox {
+          .SelectForm {
+            @include SelectForm
+          }
+        }
+        .FormLabel {
+          @include LabelBox;
+        label {
+          @include ItemsLabel;
+        }
+        span {
+          @include ItemsSpan;
+        }
+        }
+        .InputForm{
+          @include InputForm
+        }
+        .FormLabel {
+          @include LabelBox;
+          label {
+            @include ItemsLabel;
+          }
+          .other-span {
+            background-color: #bfbfbf;
+          }
+        }
+        .ConditionBox{
+          .SelectForm{
+            @include SelectForm
+          }
+        }
+      }
+      .ShippingForm {
+        padding: 40px;
+        border-bottom: 1px solid #efefef;
+        .AboutShip {
+          display: flex;
+          .ShipLink {
+            color: rgb(136, 136, 136);
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4em;
+            margin-bottom: 24px;
+          }
+          a {
+            text-decoration: none;
+            color: #3CCACE;
+            font-size: 14px;
+            margin-left: 4px;
+            line-height: 1.4
+          }
+        }
+        .FormLabel {
+          height: 19px;
+        }
+        .PostagePayerBox{
+          .SelectForm{
+            @include SelectForm
+          }
+        }
+        .FormLabel {
+          @include LabelBox;
+        label {
+          @include ItemsLabel;
+        }
+        span {
+          @include ItemsSpan;
+        }
+        }
+        .ShipFromBox {
+          .SelectForm{
+            @include SelectForm
+          }
+        }
+        .FormLabel {
+          @include LabelBox;
+          label {
+            @include ItemsLabel;
+          }
+          span {
+            @include ItemsSpan;
+          }
+        }
+        .ShipPreparationBox {
+          .SelectForm{
+            @include SelectForm
+          }
+        }
+      }
+      .PriceForm {
+        padding: 40px 40px 0;
+        box-sizing: content-box;
+        .PriceBox {
+          margin-bottom: 24px;
+          .PriceTitle{
+            display: flex;
+            margin-bottom: 24px;
+            .PriceRange {
+              color: rgb(136, 136, 136);
+              font-size: 13px;
+              font-weight: 600;
+              line-height: 1.4em;
+            }
+            a {
+              text-decoration: none;
+              color: #3CCACE;
+              font-size: 14px;
+              margin-left: 4px;
+              line-height: 1.2em;
+            }
+          }
+          .PriceSelectBox{
+            @include LabelBox;
+            .PriceLabelBox {
+              display: flex;
+              margin-right: auto;
+              label {
+                @include ItemsLabel;
+              }
+              span {
+                @include ItemsSpan;
+              }
+            }
+            .Yen{
+              font-size: 14px;
+              margin-right: 8px; 
+            }
+            .PriceFormBox {
+              width: 285px;
+              height: 48px;
+              display: flex;
+              align-items: center;
+              .PriceSelect {
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                text-align: right;
+                height: 48px;
+                outline: none;
+                padding: 0 16px;
+                width: inherit;
+              }
+            }
+          }
+        }
+        .SalesCommissionBox {
+          display: flex;
+          margin-top: 36px;
+          padding-bottom: 24px;
+          justify-content: space-between;
+          border-bottom: 1px solid #efefef;
+          .CommissionTitle {
+            width: 100%;
+            font-size: 14px;
+          }
+        }
+        .SalesProfit {
+          display: flex;
+          margin-top: 24px;
+          padding-bottom: 12px;
+          justify-content: space-between;
+          .CommissionTitle {
+            width: 100%;
+            font-size: 14px;
+          }
+        }
+      }
+      .ExhibitionButtons{
+        margin: 40px auto 32px;
+        width: 360px;
+        .UpdateBTN{
+          display: block;
+          background-color: #3CCACE;
+          color: #fff;
+          margin-bottom: 24px;
+          width: 100%;
+          font-size: 17px;
+          height: 48px;
+          padding: 0 24px;
+          border-radius: 4px;
+          font-weight: 600;
+          line-height: 1;
+          overflow: hidden;
+          text-align: center;
+          border: 1px solid transparent;
+        }
+        .SaveBTN{
+          display: block;
+          width: 100%;
+          font-size: 17px;
+          height: 48px;
+          padding: 0 24px;
+          border-radius: 4px;
+          font-weight: 600;
+          overflow: hidden;
+          text-align: center;
+          border: 1px solid transparent;
+          color: #222;
+          background-color: #ccc;
+        }
+        .BackLink {
+          margin-top: 24px;
+          display: block;
+          width: 100%;
+          color: #3CCACE;
+          text-decoration: none;
+          display: flex;
+          height: 20px;
+          justify-content: center;
+          border: none;
+          text-decoration: none;
+          font-size: 14px;
+          }
+      }
+      .AttentionBox {
+        margin: 0px 40px 64px;
+        color: rgb(51, 51, 51);
+        height: 32px;
+        font-size: 12px;
+          a {
+            color: #3CCACE;
+            text-decoration: none;
+            word-spacing: 12px;
+            display: inline-block;
+            margin: 0 -3px;
+          }
+      }
+    }
+  }
+  .ExhibitionFooter {
+    height: 220px;
+    width: 100vw;
+    padding: 40px 0;
+    background-color: #272727;
+    .Info {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      .CenterInfo {
+        margin: 0 16px;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 12px;
+      }
+    }
+    .ExhibitionFooterLogo {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
