@@ -25,7 +25,7 @@
   .single-container
     %header.single-header
       %h1.header
-        = link_to "#", class:'link' do
+        = link_to root_path, class:'link' do
           = image_tag 'logo.svg', alt: 'mercari', class: 'mercari'
         %nav.progress-bar.singup-bar
     %main.single-main
@@ -46,12 +46,12 @@
             .form-group.form-password-revelation
               = f.label :password, "パスワード"
               %span.form-require 必須
-              = f.password_field :password, minimumlength: "7", placeholder:"7文字以上の半角英数", class:"input-default"
+              = f.password_field :password, placeholder:"7文字以上の半角英数", class:"input-default"
               %p.form-info-text
                 ※ 英字と数字の両方を含めて設定してください
               = f.label :password_confirmation, "パスワード再確認"
               %span.form-require 必須
-              = f.password_field :password_confirmation, minimumlength: "7", placeholder:"7文字以上の半角英数", class:"input-default"
+              = f.password_field :password_confirmation, placeholder:"7文字以上の半角英数", class:"input-default"
               .form-password-revelation-taggle
                 .form-password-revelation-revealed-password-container
                   %span.form-password-revelation-revealed-password

@@ -24,7 +24,8 @@
     .Login-panel
       .Login-no-account
         %pアカウントをお持ちでない方はこちら
-        = link_to "新規会員登録", "#",class:"Login-no-account__Login" 
+        = link_to new_login_path, class:"Login-no-account__Login" do
+          新規会員登録 
       .Login-form-inner
         = link_to "https://google.com/", class: "Login-form-inner__btn Login-form-inner__btn--google" do
           = icon('fab', 'google', class: "Login-form-inner__btn--icon")
@@ -42,6 +43,6 @@
             = f.password_field :password, class: "Form__group--input-text", placeholder: "パスワード"
             = f.submit "ログイン", class: "Form__button" 
 
-        = link_to "#", class:"Form__coments" do
+        = link_to new_user_password_path, class:"Form__coments" do
           パスワードをお忘れの方
           
