@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :login, only: [:index, :new]
   resources :toppages, only: :index
   resources :show_items, only: :index
+  
   resources :items do 
     #Ajaxで動くアクションのルートを作成
     collection do

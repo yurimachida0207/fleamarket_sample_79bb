@@ -432,3 +432,45 @@
     }
   }
 }
+
+.content-bg-gray{
+  background-color: #EFEFEF;
+  width: 100vw;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  justify-content: center;
+  .shadowed-rounded-rectangle{
+    width: 700px;
+    box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.1);
+    margin: 100px auto 0;
+    background-color: #ffffff;
+    padding: 30px;
+    .product-new-form{
+      width: 434px;
+      margin: auto;
+      .product__block__form{
+        .product-new__field__uploader{
+          margin-bottom: 50px;
+          width: 100%;
+          background-color: rgb(245, 245, 245);
+          ul{
+            display: flex;
+            .input{
+              display: flex;
+              flex-wrap: wrap;
+              width: 100%;
+              .upload-label{
+                width: 100%;
+                height: 121px;
+                background-color: rgb(245, 245, 245);
+                .input-area{
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

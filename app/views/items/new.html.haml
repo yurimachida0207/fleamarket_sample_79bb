@@ -2,24 +2,25 @@
   .ExhibitionHeader
     = link_to image_tag('logo.svg', alt: 'ヘッダーロゴ'), "/", class: "ExhibitionHeaderLogo"
   .ExhibitionBox
-    = form_with model: @product, local: true, class: "ExhibitionForm" do |f|
+    = form_with model: @item, local: true, class: "ExhibitionForm" do |f|
       .ImageForm
         .ImageLabel
           %label 出品画像
           %span 必須
         %p.ImageInfo 最大10枚までアップロードできます
-        .ImageBox
-          = f.label :image, class: 'FileUpload' do
-            .ImageDescription
-              = icon('fas', 'camera', class: 'aaa')
-              %p ドラッグアンドドロップ
-              %p またはクリックしてファイルをアップロード
-            = f.file_field :image, class: "File"
+      .product__block__form
+        .product-new__field__uploader
+          = f.fields_for :images do |image|
+            %ul#previews
+              %li.input
+                %label.upload-label
+                  .input-area
+                    = image.file_field :image, class: "hidden image_upload"
       .ExplanationForm
         .FormLabel
           %label 商品名
           %span 必須
-        = f.text_field :name, placeholder:"40文字まで", class: "InputForm"
+        = f.text_field :item_name, placeholder:"40文字まで", class: "InputForm"
         .FormLabel
           %label 商品の説明
           %span 必須
@@ -42,7 +43,7 @@
           %label 商品の状態
           %span 必須
         .ConditionBox
-          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
+          = f.select :condition, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
         /   = f.select :condition, Product.conditions.keys, {}, {class: "SelectForm"}
       .ShippingForm
         .AboutShip
@@ -53,19 +54,19 @@
           %label 配送量の負担
           %span 必須
         .PostagePayerBox
-          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
+          = f.select :postage_payer, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
         / = f.select :postage_payer, Product.postage_payers.keys, {}, {class: "SelectForm"}
         .FormLabel
           %label 発送元の地域
           %span 必須
         .ShipFromBox
-          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
+          = f.select :ship_from, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
         / = f.select :ship_from, Product.ship_froms.keys, {}, {class: "SelectForm"}
         .FormLabel
           %label 発送までの日数
           %span 必須
         .ShipPreparationBox
-          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
+          = f.select :ship_preparation, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
         / = f.select :ship_preparation, Product.ship_preparations, {}, {class: "SelectForm"}
       .PriceForm
         .PriceBox

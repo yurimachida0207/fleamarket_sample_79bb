@@ -8,25 +8,20 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
-    @item.images.build
+    @item.images.new
 
     @category_parent_array = ["---"]
     @category_parent_array = Category.where(ancestry: nil)
   end
   
   def create
-      @item = Item.create(item_params)
+      @item = Item.new(item_params)
       if @item.save
         redirect_to root_path
       else
-        unless @item.images.present?
-          @item.images.new
-          render 'new'
-        else
-          render 'new'
-        end
+        render 'new'
       end
-    end
+  end
 
   def edit
   end
@@ -54,7 +49,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :category_id, :price, images_attributes: [:image])
+    params.require(:item).permit(:item_name, :description, :category_id,  :price,:brand, :condition, :postage_payer, :ship_form,:ship_preparation,images_attributes: [:image, :_destroy, :id])
   end
 
   def set_item
