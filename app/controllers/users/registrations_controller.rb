@@ -67,6 +67,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def birthday_join
     date = params[:birthday] 
+
+    if date["birthday(1i)"].empty? && date["birthday(2i)"].empty? && date["birthday(3i)"].empty?
+      return
+    end
+
     birthdate = Date.new(date["birthday(1i)"].to_i, date["birthday(2i)"].to_i, date["birthday(3i)"].to_i)  
     birthdate.strftime("%Y-%m-%d")
   end

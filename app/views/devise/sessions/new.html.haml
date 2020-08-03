@@ -1,17 +1,30 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.Single__container
+  .Single__header
+    .Single__header--logo
+      =image_tag "logo.svg"
+  .Single-main
+    .Login-panel
+      .Login-no-account
+        %pアカウントをお持ちでない方はこちら
+        = link_to new_login_path, class:"Login-no-account__Login" do
+          新規会員登録 
+      .Login-form-inner
+        = link_to "https://google.com/", class: "Login-form-inner__btn Login-form-inner__btn--google" do
+          = icon('fab', 'google', class: "Login-form-inner__btn--icon")
+          Googleでログイン
+        = link_to "https://www.facebook.com/", class: "Login-form-inner__btn Login-form-inner__btn--facebook" do
+          = icon('fab', 'facebook-square', class: "Login-form-inner__btn--icon")
+          Facebookでログイン
+        = link_to "https://apple.com/", class: "Login-form-inner__btn Login-form-inner__btn--apple" do
+          = icon('fab', 'apple', class: "Login-form-inner__btn--icon")
+          Appleでログイン
+      .Form
+        .Form__group
+          = form_with model: @user, url: new_user_session_path, local: true do |f|
+            = f.email_field :email, class: "Form__group--input-text", placeholder: "メールアドレス"
+            = f.password_field :password, class: "Form__group--input-text", placeholder: "パスワード"
+            = f.submit "ログイン", class: "Form__button" 
+
+        = link_to new_user_password_path, class:"Form__coments" do
+          パスワードをお忘れの方
+          
