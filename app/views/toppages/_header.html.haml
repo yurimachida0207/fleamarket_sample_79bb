@@ -14,7 +14,7 @@
     .nav
       %ul.listsLeft
         %li.listsLeft__item.listsLeft__item--first
-          = link_to "#", id: "catBtn" do
+          = link_to payment_mypages_path, id: "catBtn" do
             カテゴリー
           .tree.displayNone
             %ul.categoryTree
@@ -58,7 +58,7 @@
                 = link_to '#', id: "13" do
                   その他
         %li.listsLeft__item
-          = link_to "#", id: "brandBtn" do
+          = link_to mypages_path, id: "brandBtn" do
             ブランド
           %ul.brandsPulldown.displayNone
       %ul.listsRight

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root 'toppages#index'
 
   resources :transactions do
-    get 'buy'
+    get 'buy', to:'card#show'
   end
 
   resources :mypages do
@@ -24,5 +24,7 @@ Rails.application.routes.draw do
   end
 
   resources :login, only: :new
-  resources :show_items,only: :index
+  resources :show_items, only: :index
+  resources :items, only: :new
+  
 end
