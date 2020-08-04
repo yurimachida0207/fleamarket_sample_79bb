@@ -41,7 +41,7 @@
   .contents{
     @include -height-width(calc(100vh - 100px), calc(100vw - 700px));
     margin:50px 0px 0px 50px;
-    background-color:#fff;
+    background-color: #fff;
 
     .contents-head{
       @include -height-width(50px, calc(100vw - 700px));
@@ -55,14 +55,14 @@
     }
 
     .contents__credit-card{
-      @include -height-width(500px, calc(100vw -1000px));
+      @include -height-width(500px, calc(100vw - 1000px));
       @include vertical-and-horizontal-center();
       font-weight: 600;
-
+        
       &__number{
         @include -height-width(300px,400px);;
 
-        span{
+        .span{
           font-size: 14px;
           margin: 0 0 0 4px;
           padding: 2px 4px;
@@ -91,14 +91,14 @@
           margin:12px 0 12px 12px;
         }
       }
-
+      
       &__expiration{
 
         &__wrap{
 
           display: flex;
           align-items: center;
-          
+
           span.expiration{
             background-color: #fff;
             color:black;
@@ -117,7 +117,7 @@
       &__security-code{
         margin:8px 0 0 0;
       }
-      
+
       .content-bottom{
         @include vertical-and-horizontal-center();
         .add-btn{

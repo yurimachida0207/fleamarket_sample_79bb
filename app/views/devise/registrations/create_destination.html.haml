@@ -1,0 +1,30 @@
+%body
+  %noscript
+    = image_tag 'logo.svg', alt: 'ee'
+  .single-container
+    %header.single-header
+      %h1.header
+        = link_to root_path, class:'link' do
+          = image_tag 'logo.svg', alt: 'mercari', class: 'mercari'
+        %nav.progress-bar.singup-bar
+    %main.single-main
+      %section.l-single-container
+        %h3.l-single-head.registration 登録が完了しました
+        = link_to root_path do
+          トップページへ戻る
+    %footer.single-footer
+      %nav
+        %ul.clearfit
+          %li
+            = link_to "#", class:"privacy-kana" do
+              プライバシーポリシー
+          %li
+            = link_to "#", class:"mercari-kiyaku" do
+              メルカリ利用規約
+          %li
+            = link_to "#", class:"hyouki" do
+              特定商取引に関する表記
+      = link_to "#",clas:"logo-footer2" do
+        = image_tag 'logo-gray.svg', alt: '', height: '', width: '', class: 'logo-gray2'
+      %p
+        %small ©FURIMA
