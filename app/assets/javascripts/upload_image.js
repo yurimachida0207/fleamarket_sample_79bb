@@ -1,5 +1,5 @@
 $(function () {
-  $(document).on('click', '.image_upload', function () {
+  $(document).on('turbolinks:load' ,'click', '.image_upload', function () {
     $('.image_upload').off('change')
     console.log('aaaaa')
     var preview = $( `<div class="image-preview__wapper">

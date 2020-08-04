@@ -2,8 +2,8 @@ class Item < ApplicationRecord
 
   validates :images, presence: true
   validates_associated :images
-  validates :item_name, presence: true,length: { maximum: 40 }
-  validates :description, presence: true,length: { maximum: 1000 }
+  validates :item_name, presence: true,length:{maximum:40}
+  validates :description, presence: true,length:{maximum:1000}
   validates :category_id, presence: true
   validates :condition, presence: true
   validates :preparation, presence: true
