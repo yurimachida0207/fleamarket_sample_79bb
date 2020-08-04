@@ -94,7 +94,7 @@
           %h3.title 新規投稿商品
       .productLists
         .productList
-          = link_to "item_path" do
+          = link_to item_path(1) do
             %figure.productList--img
               = image_tag 'IMG_sprouts.jpeg', alt: 'sprouts'
             .productList--body
@@ -106,7 +106,7 @@
                     %i.fa.fa-star.likeIcon 0
                 %p (税込)
         .productList
-          = link_to "show_items(item.id)" do
+          = link_to item_path(2) do
             %figure.productList--img
               = image_tag 'a007-fish.png', alt: 'fish'
             .productList--body
@@ -118,7 +118,7 @@
                     %i.fa.fa-star.likeIcon 0
                 %p (税込) 
         .productList
-          = link_to "show_items(item.id)" do
+          = link_to item_path(3) do
             %figure.productList--img
               = image_tag 'a004-gyoza.png', alt: 'gyoza'
             .productList--body
@@ -130,7 +130,7 @@
                     %i.fa.fa-star.likeIcon 0
                 %p (税込)
         .productList
-          = link_to "show_items(item.id)" do
+          = link_to item_path(4) do
             %figure.productList--img
               = image_tag 'a001-curry.png'
             .productList--body
