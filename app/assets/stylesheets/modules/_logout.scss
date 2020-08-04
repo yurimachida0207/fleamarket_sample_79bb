@@ -9,9 +9,9 @@
   display: flex;
   
   .sidelist{
-    @include -height-width(1000px, 250px);
+    @include -height-width(700px, 250px);
     background-color: white;
-    margin:50px 0px 100px 100px;
+    margin:50px 0px 0px 100px;
     table{
       @include -height-width(200px,250px);
 
@@ -39,7 +39,7 @@
   }
 
   .contents{
-    @include -height-width(calc(100vh - 500px), calc(100vw - 700px));
+    @include -height-width(calc(100vh - 500px), calc(100vw - 600px));
     @include vertical-and-horizontal-center();
     background-color: white;
     margin:50px 0px 0px 50px;

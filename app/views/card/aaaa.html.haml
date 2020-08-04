@@ -1,0 +1,47 @@
+.payment-wrapper
+  = render 'mypages/side_bar'
+
+  .contents
+    .contents-head
+      %h2 クレジットカード情報入力
+
+    .contents__credit-card
+      .contents__credit-card__number
+        = form_with url:pay_card_index_path, method: :post, id: 'charge-form', html: {name: "inputForm" } do |f|
+          = f.label :カード番号, class: 'label'
+          %span 必須
+          %br
+          = f.text_field :number, type: 'text', class: "input-number", placeholder: "半角数字のみ" ,maxlength: "16"
+          %ul.card-list
+            %li 
+              = image_tag "/material/icon/visa.svg", size: "49x20"
+            %li
+              = image_tag "/material/icon/master-card.svg", size: "34x20"
+            %li
+              = image_tag "/material/icon/saison-card.svg", size: "30x20"
+            %li
+              = image_tag "/material/icon/jcb.svg", size: "32x20"
+            %li
+              = image_tag "/material/icon/american_express.svg", size: "21x20"
+            %li
+              = image_tag "/material/icon/dinersclub.svg", size: "32x20"
+            %li
+              = image_tag "/material/icon/discover.svg", size: "32x20"
+            
+          .contents__credit-card__expiration
+            = f.label :有効期限, class: 'label'
+            %span 必須
+            %br
+            .contents__credit-card__expiration__wrap
+              = f.select :exp_month,[["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'input-expiration'
+              %span.expiration 月
+              = f.select :exp_year,[["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'input-expiration'
+              %span.expiration 年
+
+          .contents__credit-card__security-code
+            = f.label :セキュリティコード, class: 'label'
+            %span 必須
+            %br
+            = f.text_field :cvc, name: "cvc", type: 'text', class: 'input-number', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
+          .content-bottom
+            = f.submit '追加する'
