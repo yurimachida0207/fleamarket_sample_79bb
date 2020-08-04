@@ -8,12 +8,12 @@
           %label 出品画像
           %span 必須
         %p.ImageInfo 最大10枚までアップロードできます
-      .product__block__form
-        .product-new__field__uploader
+        .ImageBox
           = f.fields_for :images do |image|
             %ul#previews
               %li.input
                 %label.upload-label
+                  = icon('fas', 'camera', class: 'UploadCamera')
                   .input-area
                     = image.file_field :image, class: "hidden image_upload"
       .ExplanationForm
@@ -43,8 +43,7 @@
           %label 商品の状態
           %span 必須
         .ConditionBox
-          = f.select :condition, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
-        /   = f.select :condition, Product.conditions.keys, {}, {class: "SelectForm"}
+          = f.collection_select :condition_id, Condition.all, :id, :name,{include_blank: "選択してください"}, {class: "SelectForm"}
       .ShippingForm
         .AboutShip
           %p.ShipLink 配送について
@@ -54,20 +53,17 @@
           %label 配送量の負担
           %span 必須
         .PostagePayerBox
-          = f.select :postage_payer, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
-        / = f.select :postage_payer, Product.postage_payers.keys, {}, {class: "SelectForm"}
+          = f.select :postage_payer, Item.postage_payers.keys, {}, {class: "SelectForm"}
         .FormLabel
           %label 発送元の地域
           %span 必須
         .ShipFromBox
-          = f.select :ship_from, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
-        / = f.select :ship_from, Product.ship_froms.keys, {}, {class: "SelectForm"}
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{include_blank: "選択してください"}, {class: "SelectForm"}
         .FormLabel
           %label 発送までの日数
           %span 必須
         .ShipPreparationBox
-          = f.select :ship_preparation, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
-        / = f.select :ship_preparation, Product.ship_preparations, {}, {class: "SelectForm"}
+          = f.collection_select :preparation_id, Preparation.all, :id, :days,{include_blank: "選択してください"}, {class: "SelectForm"}
       .PriceForm
         .PriceBox
           .PriceTitle

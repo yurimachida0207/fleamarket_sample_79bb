@@ -3,7 +3,7 @@ $(function () {
     $('.image_upload').off('change')
     console.log('aaaaa')
     var preview = $( `<div class="image-preview__wapper">
-                        <img class="preview", width="80" height="80">
+                        <img class="preview", width="124" height="124">
                           </div><div class="image-preview_btn">
                             <div class="image-preview_btn_delete">
                             削除
@@ -11,9 +11,10 @@ $(function () {
                           </div>`);
     var append_input = $(`<li class="input">
                             <label class="upload-label">
-                              <div class="input-area display-none">
-                              <input class="hidden image_upload" type="file">
-                              </div>
+                              <i class="fa fa-camera"></i>
+                                <div class="input-area display-none">
+                                  <input class="hidden image_upload" type="file">
+                                </div>
                             </label>
                           </li>`)
     $ul = $('#previews')
@@ -30,7 +31,7 @@ $(function () {
       }
       $li.append(preview);
       $('#previews li').css({
-        'width': `80px`
+        'width': `124px`
       })
       $label.css('display', 'none');
       $li.removeClass('input');
@@ -39,9 +40,8 @@ $(function () {
       if ($lis.length < 5) {
         $ul.append(append_input)
         $('#previews li:last-child').css({
-          'width': `80px`
+          'width': `124px`
         })
-        
       }
       $inputs.each(function (num, input) {
         $(input).removeAttr('name');
@@ -55,6 +55,7 @@ $(function () {
   $(document).on('click', '.image-preview_btn_delete', function () {
     var append_input = $(`<li class="input">
                             <label class="upload-label">
+                              <i class="fa fa-camera"></i>
                                 <div class="input-area display-none">
                                   <input class="hidden image_upload" type="file">
                                 </div>
@@ -69,7 +70,7 @@ $(function () {
       $ul.append(append_input)
     }
     $('#previews li:last-child').css({
-      'width': `80px`
+      'width': `124px`
     })
   });
 });

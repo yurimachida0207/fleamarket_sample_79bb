@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
   end
-  
+
   def new
     @item = Item.new
     @item.images.new
@@ -13,14 +13,14 @@ class ItemsController < ApplicationController
     @category_parent_array = ["---"]
     @category_parent_array = Category.where(ancestry: nil)
   end
-  
+
   def create
-      @item = Item.new(item_params)
-      if @item.save
-        redirect_to root_path
-      else
-        render 'new'
-      end
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      redirect_to new_item_path
+    end
   end
 
   def edit
@@ -48,12 +48,13 @@ class ItemsController < ApplicationController
   end  
 
   private
+
   def item_params
-    params.require(:item).permit(:item_name, :description, :category_id,  :price,:brand, :condition, :postage_payer, :ship_form,:ship_preparation,images_attributes: [:image, :_destroy, :id])
+    params.require(:item).permit(:item_name, :description, :category_id, :brand, :condition_id, :postage_payer, :prefecture_id, :preparation_id, :price, images_attributes: [:image, :_destroy, :id])
   end
 
   def set_item
     @item = Item.find(params[:id])
   end
-  
+
 end
