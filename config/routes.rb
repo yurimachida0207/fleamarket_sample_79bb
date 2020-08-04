@@ -25,6 +25,6 @@ Rails.application.routes.draw do
 
   resources :login, only: :new
   resources :show_items, only: :index
-  resources :items, only: :new
+  resources :items, only: [:index, :new]
   
 end

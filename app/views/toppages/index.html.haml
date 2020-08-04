@@ -90,7 +90,7 @@
     %h2.head ピックアップカテゴリー
     .productBox
       .productHead
-        = link_to '#' do
+        = link_to items_path do
           %h3.title 新規投稿商品
       .productLists
         - @items.each do |item|
@@ -105,6 +105,7 @@
                   %ul
                     %li
                       = item.price
+                      円
                     %li
                       %i.fa.fa-star.likeIcon 0
                   %p (税込)
@@ -112,7 +113,7 @@
     %h2.head ピックアップブランド
     .productBox
       .productHead
-        = link_to '#' do
+        = link_to items_path do
           %h3.title アーカイバ
       .productLists
         - @items.each do |item|
@@ -127,18 +128,11 @@
                   %ul
                     %li
                       = item.price
+                      円
                     %li
                       %i.fa.fa-star.likeIcon 0
                   %p (税込)
-%aside.appBanner
-  .inner
-    %h2.inner__title 誰でもかんたん、人生を変えるフリマアプリ
-    %p.inner__text 今すぐ無料ダウンロード！
-    .inner__icon
-      = link_to '#' do
-        = image_tag 'app-store.svg', class: "linkIcon aBtn"
-      = link_to '#' do
-        = image_tag 'google-play.svg', class: "linkIcon gBtn"
+= render "app_banner"
 
 = render "footer"
 
