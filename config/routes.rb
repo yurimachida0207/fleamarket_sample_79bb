@@ -23,8 +23,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :login, only: [:index, :new]
-  resources :toppages, only: :index
+  resources :login, only: :new
   resources :show_items, only: :index
   
   resources :items do 
@@ -34,4 +33,5 @@ Rails.application.routes.draw do
       get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
     end
   end
+  
 end
