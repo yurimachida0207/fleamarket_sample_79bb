@@ -54,8 +54,6 @@ ActiveRecord::Schema.define(version: 2020_08_03_065220) do
     t.integer "prefecture_id", null: false
     t.integer "preparation_id", null: false
     t.integer "price", null: false
-    t.integer "seller_id", null: false
-    t.integer "buyer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_items_on_category_id"
