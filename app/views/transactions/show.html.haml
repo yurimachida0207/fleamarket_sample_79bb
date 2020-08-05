@@ -27,9 +27,10 @@
           %h1 支払い方法
           .main__purchase-details__method-of-payment__card
             %p クレジットカード
-            %p ************1234
+            -# %p ************1234
+            -# = "カード番号：""**** **** **** " + @default_card_information.last4
             %p 有効期限 12/20
-            = image_tag "/material/icon/icon-visa.png", class: "card-icon"
+            -# = image_tag "/material/icon/icon-visa.png", class: "card-icon"
 
         .main__purchase-details__shipping-address
           %h1 配送先住所

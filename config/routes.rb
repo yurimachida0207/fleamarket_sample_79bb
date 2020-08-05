@@ -12,9 +12,9 @@ Rails.application.routes.draw do
 
   root 'toppages#index'
 
-  # resources :transactions do
-  #   get 'buy', to:'card#show'
-  # end
+  resources :transactions do
+    get 'buy', to:'card#show'
+  end
 
   resources :mypages do
     collection do
@@ -30,6 +30,14 @@ Rails.application.routes.draw do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete'
+    end
+  end
+
+  resources :purchase, only: [:index] do
+    collection do
+      get 'index', to: 'purchase#index'
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
     end
   end
 
