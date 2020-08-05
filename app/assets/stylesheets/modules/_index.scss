@@ -87,7 +87,7 @@ height: 910px;
   }
   &__button{
     display: block;
-    margin: 40px 16px 0;
+    margin: 30px 20px 0;
     text-align: center;
     background-color: red;
     color: white;
@@ -98,6 +98,12 @@ height: 910px;
     transition: all;
     cursor: pointer;
     text-decoration: none;
+      &--default{
+        background-color: red;
+        color: white;
+        text-decoration: none;
+        border: 0px solid;
+      }
   }
   &__coments{
     display: block;

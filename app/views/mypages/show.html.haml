@@ -1,4 +1,4 @@
-= render "toppages/header"
+-# = render "toppages/header"
 
 .main
   .showMain
@@ -76,7 +76,7 @@
                   %i.fa.fa-flag
                   不適切な商品の通報
           .my_page_btn
-            - if user_signed_in? && current_user.id ==@item.user_id
+          - if user_signed_in? && current_user.id ==@item.user_id
             = link_to "#", class:"edit_btn" do
               商品の編集
             = link_to "mypage_destroy_path(@item.id)",method: :delete, class:"destroy_btn" do
@@ -120,6 +120,6 @@
                       %i.fa.fa-star.lekeIcon 0
                   %p 税込
 
-= render "toppages/footer"
+-# = render "toppages/footer"
 
-= render "toppages/purchaseBtn"
+-# = render "toppages/purchaseBtn"

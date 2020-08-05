@@ -22,8 +22,12 @@
         .Form__group
           = form_with model: @user, url: new_user_session_path, local: true do |f|
             = f.email_field :email, class: "Form__group--input-text", placeholder: "メールアドレス"
+        .Form__group
+          = form_with model: @user, url: new_user_session_path, local: true do |f|   
             = f.password_field :password, class: "Form__group--input-text", placeholder: "パスワード"
-            = f.submit "ログイン", class: "Form__button" 
+        .Form__button
+          = form_with model: @user, url: new_user_session_path, local: true do |f|    
+            = f.submit "ログイン", class:"Form__button--default"
 
         = link_to new_user_password_path, class:"Form__coments" do
           パスワードをお忘れの方
