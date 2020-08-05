@@ -23,6 +23,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+    @item = Item.find(params[:id])
+    @items = Item.includes(:images)
+    @user = User.find(params[:id])
+  end
+
   def edit
   end
 
