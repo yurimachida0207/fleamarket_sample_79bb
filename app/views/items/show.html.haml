@@ -11,7 +11,7 @@
             = @item.item_name
           .itemBox__body
             %ul.ul1
-              -# = render partial: 'item' ,locals: {item: @item}
+              = render partial: 'item' ,locals: {item: @item}
             %ul.ul2
               - @item.images.each do |image|
                 %li.li1
@@ -37,23 +37,23 @@
                 %th カテゴリー
                 %td 
                   = link_to "#" do
-                    ベビー・キッズ
-                  %br/
+                    = @category.name 
+                    %br/
                   = link_to "#" do
-                    ベビー服（男の子用) ~95cm
-                  %br/
+                    %br/
                   = link_to "#" do
-                    アウター
-                  %br/
+                    %br/
               %tr
                 %th ブランド
                 %td
+                  = @item.brand
               %tr
                 %th 商品のサイズ
                 %td 
               %tr
                 %th 商品の状態
-                %td 未使用に近い
+                %td 
+                  = @condition.name
               %tr
                 %th 配送料の負担
                 %td 送料込み（出品者負担）

@@ -27,6 +27,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @items = Item.includes(:images)
     @user = User.find(params[:id])
+    @category = Category.find(params[:id])
+    @condition = Condition.find(params[:id])
   end
 
   def edit
