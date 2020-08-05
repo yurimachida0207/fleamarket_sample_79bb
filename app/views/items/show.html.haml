@@ -12,6 +12,10 @@
             %ul.ul1
               %li.images
                 = image_tag @item.images.first.image.url
+                  - if @item.buyer_id.present?
+                  .items-box_photo__sold
+                    .items-box_photo__sold__inner 
+                      SOLD
                 %ul.ul2
                   %li.li1
                     = image_tag 'IMG_9072.jpeg',alt:'ee',width: '75',height:'',class:'image2'
