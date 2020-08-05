@@ -10,9 +10,10 @@ class Item < ApplicationRecord
   validates :postage_payer, presence: true
   validates :prefecture, presence: true
   validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
-  
+
   has_many :images, dependent: :destroy
   belongs_to :category
+  belongs_to :user
   accepts_nested_attributes_for :images, allow_destroy: true
 
   enum postage_payer:{
