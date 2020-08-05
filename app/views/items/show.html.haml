@@ -11,7 +11,7 @@
           .itemBox__body
             %ul.ul1
               %li.images
-                = image_tag 'IMG_9072.jpeg', alt: 'ee', class: 'image1'
+                = image_tag @item.images.first.image.url
                 %ul.ul2
                   %li.li1
                     = image_tag 'IMG_9072.jpeg',alt:'ee',width: '75',height:'',class:'image2'
@@ -19,7 +19,7 @@
                     = image_tag 'IMG_9069.jpeg', alt: 'ee', height: '75', width: '', class: 'image3'
           .itemBox__price
             %span1
-              ￥2000
+              = @item.price
             .priceDetail
               %span
                 (税込み)

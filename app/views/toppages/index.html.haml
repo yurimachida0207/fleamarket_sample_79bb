@@ -95,7 +95,7 @@
       .productLists
         - @items.each do |item|
           .productList
-            = link_to '/mypages/show' do
+            = link_to item_path(item.id) do
               %figure.productList--img
                 = image_tag item.images.first.image.url
               .productList--body
@@ -118,7 +118,7 @@
       .productLists
         - @items.each do |item|
           .productList
-            = link_to '/mypages/show' do
+            = link_to item_path(item.id) do
               %figure.productList--img
                 = image_tag item.images.first.image.url
               .productList--body
