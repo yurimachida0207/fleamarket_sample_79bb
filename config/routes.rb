@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'purchase/index'
-  get 'purchase/done'
+  # get 'purchase/index'
+  # get 'purchase/done'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -12,9 +12,9 @@ Rails.application.routes.draw do
 
   root 'toppages#index'
 
-  resources :transactions do
-    get 'buy', to:'card#show'
-  end
+  # resources :transactions do
+  #   get 'buy', to:'card#show'
+  # end
 
   resources :mypages do
     collection do
@@ -36,9 +36,10 @@ Rails.application.routes.draw do
   resources :purchase, only: [:index] do
     collection do
       get 'index', to: 'purchase#index'
-      post 'pay', to: 'purchase#pay'
+      # post 'pay', to: 'purchase#pay'
       get 'done', to: 'purchase#done'
     end
+    post 'pay', to: 'purchase#pay'
   end
 
   # resources :login, only: [:index, :new]

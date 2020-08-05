@@ -13,8 +13,8 @@
     @include -height-width(100px, 100vw);
     @include vertical-and-horizontal-center;
 
-    .logo{
-      @include -height-width(40%, 10%);
+    .furima-logo{
+      @include -height-width(50%, 10%);
       object-fit: cover;
       margin-top: 10px;
     }
@@ -115,8 +115,12 @@
           font-weight: 600;
         }
 
+        p.card{
+          margin:0 0 10px 0;
+        }
+
         &__card{
-          @include -height-width(90px, 170px);
+          @include -height-width(90px, 250px);
           margin-top: 30px;
           .card-icon{
             @include -height-width(30%, 30%);
@@ -153,13 +157,14 @@
           h1{
             font-weight: 900;
           }
+
           //link_toクラス(text-decoration)の縦横を100%に指定すれば、要素全体がリンクになる。
           .text-decoration{
             @include vertical-and-horizontal-center;
             height:100%;
             width: 100%;
             text-decoration: none;
-            color:white;
+            color:rgb(60,202,206);
           }
         }
         //要素上にマウスが乗ったら
