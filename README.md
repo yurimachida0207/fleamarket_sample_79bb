@@ -70,10 +70,11 @@
 |------|----|-------|
 |item_name|string|null: false|
 |description|text|null: false|
-|brand|string|null: false|
+|brand|string||
 |condition|string|null: false|
 |postage_payer|string|null: false|
 |ship_from|string|null: false|
+|ship_preparation|string|null: false|
 |price|string|null: false|
 |seller|integer|null: false|
 |buyer|integer||

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_04_024748) do
+ActiveRecord::Schema.define(version: 2020_08_03_065220) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
 
   create_table "destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -29,8 +37,8 @@ ActiveRecord::Schema.define(version: 2020_08_04_024748) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
     t.bigint "item_id"
+    t.string "image", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_images_on_item_id"
@@ -38,11 +46,19 @@ ActiveRecord::Schema.define(version: 2020_08_04_024748) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "item_name", null: false
+    t.text "description", null: false
+    t.bigint "category_id", null: false
+    t.string "brand"
+    t.integer "condition_id", null: false
+    t.integer "postage_payer", default: 0, null: false
+    t.integer "prefecture_id", null: false
+    t.integer "preparation_id", null: false
     t.integer "price", null: false
     t.integer "seller_id", null: false
     t.integer "buyer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_items_on_category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -64,4 +80,6 @@ ActiveRecord::Schema.define(version: 2020_08_04_024748) do
   end
 
   add_foreign_key "destinations", "users"
+  add_foreign_key "images", "items"
+  add_foreign_key "items", "categories"
 end
