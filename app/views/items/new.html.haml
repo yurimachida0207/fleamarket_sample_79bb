@@ -2,24 +2,25 @@
   .ExhibitionHeader
     = link_to image_tag('logo.svg', alt: 'ヘッダーロゴ'), "/", class: "ExhibitionHeaderLogo"
   .ExhibitionBox
-    = form_with model: @product, local: true, class: "ExhibitionForm" do |f|
+    = form_with model: @item, local: true, class: "ExhibitionForm" do |f|
       .ImageForm
         .ImageLabel
           %label 出品画像
           %span 必須
-        %p.ImageInfo 最大10枚までアップロードできます
+        %p.ImageInfo 最大5枚までアップロードできます
         .ImageBox
-          = f.label :image, class: 'FileUpload' do
-            .ImageDescription
-              = icon('fas', 'camera', class: 'aaa')
-              %p ドラッグアンドドロップ
-              %p またはクリックしてファイルをアップロード
-            = f.file_field :image, class: "File"
+          = f.fields_for :images do |image|
+            %ul#previews
+              %li.input
+                %label.upload-label
+                  = icon('fas', 'camera', class: 'UploadCamera')
+                  .input-area
+                    = image.file_field :image, class: "hidden image_upload"
       .ExplanationForm
         .FormLabel
           %label 商品名
           %span 必須
-        = f.text_field :name, placeholder:"40文字まで", class: "InputForm"
+        = f.text_field :item_name, placeholder:"40文字まで", class: "InputForm"
         .FormLabel
           %label 商品の説明
           %span 必須
@@ -32,14 +33,8 @@
           %label カテゴリー
           %span 必須
         .CategoryBox
-          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
-        /  = f.select :category, Product.categories.keys, {}, {class: "SelectForm"}
-        .CategoryBox
-          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
-        /  = f.select :category, Product.categories.keys, {}, {class: "SelectForm"}
-        .CategoryBox
-          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
-        /  = f.select :category, Product.categories.keys, {}, {class: "SelectForm"}
+          .CategoryBoxChoose
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
         .FormLabel
           %label ブランド
           %span.other-span 任意
@@ -48,8 +43,7 @@
           %label 商品の状態
           %span 必須
         .ConditionBox
-          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
-        /   = f.select :condition, Product.conditions.keys, {}, {class: "SelectForm"}
+          = f.collection_select :condition_id, Condition.all, :id, :name,{include_blank: "選択してください"}, {class: "SelectForm"}
       .ShippingForm
         .AboutShip
           %p.ShipLink 配送について
@@ -59,20 +53,17 @@
           %label 配送量の負担
           %span 必須
         .PostagePayerBox
-          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
-        / = f.select :postage_payer, Product.postage_payers.keys, {}, {class: "SelectForm"}
+          = f.select :postage_payer, Item.postage_payers.keys, {}, {class: "SelectForm"}
         .FormLabel
           %label 発送元の地域
           %span 必須
         .ShipFromBox
-          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
-        / = f.select :ship_from, Product.ship_froms.keys, {}, {class: "SelectForm"}
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{include_blank: "選択してください"}, {class: "SelectForm"}
         .FormLabel
           %label 発送までの日数
           %span 必須
         .ShipPreparationBox
-          = f.select :category, [['選択してください', 1], ['未定', 2]], {}, {class: "SelectForm"}
-        / = f.select :ship_preparation, Product.ship_preparations, {}, {class: "SelectForm"}
+          = f.collection_select :preparation_id, Preparation.all, :id, :days,{include_blank: "選択してください"}, {class: "SelectForm"}
       .PriceForm
         .PriceBox
           .PriceTitle
@@ -85,17 +76,16 @@
               %span 必須
             .Yen ¥
             .PriceFormBox
-              = f.number_field :price, placeholder: '0', class: "PriceSelect"
+              %input#price_calc.PriceSelect{placeholder: "0", type: "number"}/
         .SalesCommissionBox
           .CommissionTitle
             %p 販売手数料（10%)
           .SalesCommission
-            ー
         .SalesProfit
           .CommissionTitle
             %p 販売利益
-          .SalesCommission
-            ー
+          = f.number_field :price, style: "display: none", id: "price"
+          .SalesCommission_2
       .ExhibitionButtons
         = f.submit '出品する', class: 'ExhibitionBTN'
         = f.submit '下書きに保存', class: 'SaveBTN'
