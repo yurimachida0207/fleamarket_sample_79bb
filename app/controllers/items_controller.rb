@@ -42,11 +42,6 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find(params[:child_id]).children
   end
 
-  def destroy
-    @item.destroy
-    redirect_to root_path
-  end  
-
   private
 
   def item_params
