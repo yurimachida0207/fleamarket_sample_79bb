@@ -8,6 +8,10 @@ class ItemsController < ApplicationController
    
   def destroy
     if @item.destroy
+      redirect_to  destroy_mypages_path
+    else
+      flash.now[:alert] = '削除できませんでした'
+      render :show
   end
 end
 
