@@ -3,6 +3,9 @@
   %table
     %tr
       %td.list.mypage
+        = link_to "　トップページ", root_path, class:"tabel-btn"
+    %tr
+      %td.list.mypage
         = link_to "　マイページ", mypages_path, class:"tabel-btn"
     %tr
       %td.list.listed-products
@@ -15,10 +18,6 @@
     %tr  
       %td.list.purchased-product
         = link_to "　出品する", "#", class:"tabel-btn"
-
-    %tr
-      %td.list.notice
-        = link_to "　お知らせ", "#", class:"tabel-btn"
 
     %tr
       %td.list.payment
