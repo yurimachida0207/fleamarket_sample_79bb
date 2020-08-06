@@ -90,7 +90,6 @@
             .purchase
               = link_to edit_item_path, class:"purchase_btn" do
                 商品の購入
-            
         .commentBox
           %ul.commentContents
           = form_with url:"#", local: true, class: "new_comment" do |f|
@@ -131,6 +130,4 @@
                   %p 税込
 
 = render "toppages/footer"
-
 = render "toppages/purchaseBtn"
-

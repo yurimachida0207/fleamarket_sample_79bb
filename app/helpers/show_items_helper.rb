@@ -1,2 +1,0 @@
-module ShowItemsHelper
-end
