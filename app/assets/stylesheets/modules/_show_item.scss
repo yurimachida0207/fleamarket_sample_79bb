@@ -155,29 +155,46 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-              .edit_btn{
-                text-decoration: none;
-                text-align: center;
-                margin: 20px 0;
-                line-height: 48px;
-                background-color: #3CCACE;
-                border: 1px solid #3CCACE;
-                color: #fff;
-                width: 60%;
-                font-size: 18px;
-                border-radius: 100px;
-              }
-              .destroy_btn{
-                text-align: center;
-                text-decoration: none;
-                line-height: 48px;
-                background-color: #3CCACE;
-                border: 1px solid #3CCACE;
-                color: #fff;
-                width: 60%;
-                font-size: 18px;
-                border-radius: 100px;
-              }
+            .edit_btn{
+              text-decoration: none;
+              text-align: center;
+              margin: 20px 0;
+              line-height: 48px;
+              background-color: #3CCACE;
+              border: 1px solid #3CCACE;
+              color: #fff;
+              width: 60%;
+              font-size: 18px;
+              border-radius: 100px;
+            }
+            .destroy_btn{
+              text-align: center;
+              text-decoration: none;
+              line-height: 48px;
+              background-color: #3CCACE;
+              border: 1px solid #3CCACE;
+              color: #fff;
+              width: 60%;
+              font-size: 18px;
+              border-radius: 100px;
+            }
+          }
+          .purchase{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .purchase_btn{
+              text-align: center;
+              text-decoration: none;
+              line-height: 48px;
+              background-color: #3CCACE;
+              border: 1px solid #3CCACE;
+              color: #fff;
+              width: 60%;
+              font-size: 18px;
+              border-radius: 100px;
+              margin: 20px;
+            }
           }
         }
         .commentBox{
