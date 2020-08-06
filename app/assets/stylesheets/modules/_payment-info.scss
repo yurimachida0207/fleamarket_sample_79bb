@@ -1,0 +1,48 @@
+.payment-info-head{
+  @include -height-width(calc(100vh - 100px), calc(100vw - 700px));
+  
+  background-color: #fff;
+  margin:50px 0px 0px 50px;
+
+  .payment-info-title{
+    @include -height-width(50px, calc(100vw - 700px));
+    @include vertical-and-horizontal-center;
+    align-items: center;
+    border-bottom: 1px solid rgb(60,202,206);
+    font-weight: 800;
+    h2 {
+      text-align: center;
+      font-size: 24px;
+    }
+  }
+
+  .payment-info-wrapper{
+    @include vertical-and-horizontal-center();
+    .payment-info-wrapper-child{
+      @include -height-width(130px, 300px);
+      @include vertical-and-horizontal-center();
+      display: block;
+      margin:30px 0 30px 30px;
+      border-bottom: 1px solid rgb(60,202,206);
+
+      &__cardnumber{
+        font-size:20px;
+      }
+
+      &__carddate{
+        font-size:20px;
+        margin:15px 0 15px 0;
+      }
+
+      button{
+        margin:0 0 15px 0;
+        color:red;
+        background-color: #fff;
+      }
+    }
+  }
+
+
+
+
+}

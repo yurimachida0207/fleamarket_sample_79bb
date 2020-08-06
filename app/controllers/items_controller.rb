@@ -1,9 +1,12 @@
 class ItemsController < ApplicationController
 
-  before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
+  before_action :set_item, except: [:index, :new, :create, :show, :get_category_children, :get_category_grandchildren]
 
   def index
-    @items = Item.all
+    @items = Item.includes(:images).order('created_at DESC')
+  end
+
+  def show
   end
    
   def destroy
@@ -19,7 +22,6 @@ end
   def new
     @item = Item.new
     @item.images.new
-
     @category_parent_array = ["---"]
     @category_parent_array = Category.where(ancestry: nil)
   end
@@ -29,8 +31,21 @@ end
     if @item.save
       redirect_to root_path
     else
-      render action: :new
+      redirect_to new_item_path
     end
+  end
+ 
+
+  def show
+    @item = Item.find(params[:id])
+    @items = Item.includes(:images)
+    @user = User.find(params[:id])
+    @categories = Category.find(params[:id])
+  end
+
+
+
+  def destroy
   end
 
   def edit
@@ -55,7 +70,7 @@ end
   private
 
   def item_params
-    params.require(:item).permit(:item_name, :description, :category_id, :brand, :condition_id, :postage_payer, :prefecture_id, :preparation_id, :price, images_attributes: [:image, :_destroy, :id])
+    params.require(:item).permit(:item_name, :description, :category_id, :brand, :condition_id, :postage_payer, :prefecture_id, :preparation_id, :price, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_item
