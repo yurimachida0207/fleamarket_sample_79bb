@@ -195,6 +195,18 @@
               border-radius: 100px;
               margin: 20px;
             }
+            .disabled-button {
+              text-align: center;
+              text-decoration: none;
+              line-height: 48px;
+              background-color: red;
+              border: 1px solid #3CCACE;
+              color: #fff;
+              width: 60%;
+              font-size: 18px;
+              border-radius: 100px;
+              margin: 20px;
+            }
           }
         }
         .commentBox{
