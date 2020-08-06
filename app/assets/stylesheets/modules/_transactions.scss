@@ -6,7 +6,7 @@
   //フォントの指定
   font-family: "Arial","游ゴシック体","YuGothic","メイリオ","Meiryo","sans-serif";  
 
-  @include -height-width(1000px, 100vw);
+  @include -height-width(100vh, 100vw);
   background-color: lightgray;
   
   .header{
@@ -14,19 +14,18 @@
     @include vertical-and-horizontal-center;
 
     .furima-logo{
-      @include -height-width(50%, 10%);
+      @include -height-width(60%, 15%);
       object-fit: cover;
       margin-top: 10px;
     }
   }
 
   .main{
-    @include -height-width(860px, 100vw);
+    @include -height-width(800px, 100vw);
     display: flex;
     justify-content: center;
-    background-color: lightgray;
     &__purchase-details{
-      @include -height-width(840px, 700px);
+      @include -height-width(750px, 700px);
       background-color:white;
       display: flex;
       justify-content: center;
@@ -52,7 +51,7 @@
         &__image-box{
           &__image{
             .product-image{
-              @include -height-width(28%, 28%);
+              @include -height-width(50%, 30%);
               object-fit: cover;
               padding-top: 15px;
               padding-left: 10px;

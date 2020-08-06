@@ -3,7 +3,8 @@ class PurchaseController < ApplicationController
   require 'payjp'
 
   def index
-    # @item = Item.find(params[:item_id])
+    # 商品のデータベース情報をparamsで引っ張る
+    @item = Item.find(params[:id])
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to controller: "card", action: "new"
@@ -15,15 +16,20 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    @item = Item.find(params[:item_id])
+    # 商品のデータベース情報をparamsで引っ張る
+    @item = Item.find(params[:id])
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
-    :amount => @item[0].price,
+    :amount => @item.price,# 商品の売価
     :customer => card.customer_id,
     :currency => 'jpy',
   )
   redirect_to action: 'done'
+  end
+
+  def done
+    @item = Item.find(params[:id])
   end
 
 end
