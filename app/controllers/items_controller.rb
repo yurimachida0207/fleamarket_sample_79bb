@@ -3,7 +3,10 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:show, :new, :create, :show, :get_category_children, :get_category_grandchildren]
 
   def index
-    @items = Item.all
+    @items = Item.includes(:images).order('created_at DESC')
+  end
+
+  def show
   end
 
   def new
