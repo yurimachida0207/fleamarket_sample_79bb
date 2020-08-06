@@ -6,9 +6,6 @@ class ItemsController < ApplicationController
     @items = Item.includes(:images).order('created_at DESC')
   end
 
-  def show
-  end
-
   def new
     @item = Item.new
     @item.images.new
@@ -32,8 +29,6 @@ class ItemsController < ApplicationController
     @user = User.find(params[:id])
     @categories = Category.find(params[:id])
   end
-
-
 
   def destroy
   end
