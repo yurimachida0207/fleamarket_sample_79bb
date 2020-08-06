@@ -20,12 +20,6 @@
               -# %h2 送料込み(税込み)¥999,999
               = "¥"+"#{@item.price}"+"(税込)"
 
-        -# .main__purchase-details__payment-amount
-        -#   .main__purchase-details__payment-amount__headline
-        -#     %h1 支払い金額
-        -#   .main__purchase-details__payment-amount__actual-payment-amount
-        -#     %h2 ¥999,999
-
         .main__purchase-details__method-of-payment
           %h1 支払い方法
           .main__purchase-details__method-of-payment__card
@@ -38,8 +32,12 @@
 
         .main__purchase-details__shipping-address
           %h1 配送先住所
-          %p 〒999-9999
-          %p 日本東京都〇〇市〇〇町999-99
+          = @destination.zip_code.to_s.insert(3, '-')
+          %br
+          = @destination.prefecture
+          = @destination.address
+          = @destination.second_address
+            
 
         .main__purchase-details__buybtn-field
           .main__purchase-details__buybtn-field__buybtn

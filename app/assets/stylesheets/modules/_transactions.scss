@@ -21,7 +21,7 @@
   }
 
   .main{
-    @include -height-width(800px, 100vw);
+    @include -height-width(860px, 100vw);
     display: flex;
     justify-content: center;
     &__purchase-details{

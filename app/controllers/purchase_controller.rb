@@ -3,8 +3,12 @@ class PurchaseController < ApplicationController
   require 'payjp'
 
   def index
+    
     # 商品のデータベース情報をparamsで引っ張る
     @item = Item.find(params[:id])
+    # ユーザーの住所などの情報
+    @destination = Destination.where(user_id: current_user.id).first
+
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to controller: "card", action: "new"
