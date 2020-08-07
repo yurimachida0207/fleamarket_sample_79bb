@@ -80,13 +80,13 @@
                 = link_to "#" do
                   %i.fa.fa-flag
                   不適切な商品の通報
-          -if user_signed_in? && current_user.id == @item.id
+          -if user_signed_in? && current_user.id == @item.user_id
             .my_page_btn
-              = link_to edit_item_path, class:"edit_btn" do
+              = link_to edit_item_path(@item.id), class:"edit_btn" do
                 商品の編集
               = link_to item_path(@item.id), method: :delete, class: "destroy_btn" do
                 商品の削除
-          -elsif @item.buyer_id.present?
+          -elsif user_signed_in? && current_user.id != @item.user_id
             .purchase
               = link_to root_path, class: "disabled-button" do
                 残念！売切れました
