@@ -1,2 +1,5 @@
 %li.images
   = image_tag item.images.first.image.url, class:"image1"
+  -if @item.buyer_id.present?
+    .items-box_photo__sold
+      .items-box_photo__sold__inner SOLD

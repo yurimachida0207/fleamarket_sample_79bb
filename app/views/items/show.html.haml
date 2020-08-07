@@ -88,7 +88,11 @@
                 商品の削除
           -elsif user_signed_in? && current_user.id != @item.user_id
             .purchase
-              = link_to edit_item_path, class:"purchase_btn" do
+              = link_to root_path, class: "disabled-button" do
+                残念！売切れました
+          -else
+            .purchase
+              = link_to purchase_path, class:"purchase_btn" do
                 商品の購入
         .commentBox
           %ul.commentContents
