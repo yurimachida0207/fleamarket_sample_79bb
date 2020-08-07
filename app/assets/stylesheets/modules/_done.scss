@@ -1,0 +1,23 @@
+.done__wrapper{
+  
+  justify-content: center;
+
+  @include vertical-and-horizontal-center();
+
+  &__box{
+    background-color: white;
+    &__heading{
+      @include vertical-and-horizontal-center();
+      @include -height-width(50px,400px);
+      border-bottom:1px solid rgb(60,202,206);
+      font-size:30px;
+      background-color: white;
+    }
+
+    .done__wrapper__product-information{
+      margin:20px;
+      font-size: 20px;
+    }
+
+  }
+}

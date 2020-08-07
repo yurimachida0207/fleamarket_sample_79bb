@@ -2,4 +2,4 @@
   = render 'mypages/side_bar'
   .contents
     .contents__logout
-      = link_to "ログアウトする", "#", method: :delete, class: 'logout-btn'
+      = link_to "ログアウトする", destroy_user_session_path, method: :delete, class: 'logout-btn'
