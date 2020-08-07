@@ -102,8 +102,7 @@ class ItemsController < ApplicationController
   end
 
   def category_parent_array
-    @category_parent_array = Category.where(ancestry: nil).each do |parent|
-    end
+    @category_parent_array = Category.where(ancestry: nil)
   end
 
   def show_all_instance
