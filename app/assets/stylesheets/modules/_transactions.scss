@@ -14,7 +14,7 @@
     @include vertical-and-horizontal-center;
 
     .furima-logo{
-      @include -height-width(60%, 15%);
+      @include -height-width(75%, 15%);
       object-fit: cover;
       margin-top: 10px;
     }
