@@ -1,11 +1,12 @@
 .Single__header{
   background-color:rgb(245, 245, 245);
   height: 90px;
-  text-align: center;
-  padding: 20px 0 0 750px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &--logo{
     width: 20%;
-    
   }   
 }
 .Single-main{
@@ -34,6 +35,8 @@ height: 910px;
     color: azure;
     line-height: 47px;
     text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
   }
 }
 .Login-form-inner{
@@ -41,7 +44,6 @@ height: 910px;
   padding: 30px 64px;
   &__btn{
     display: block;
-    height: 75px;
     width :328px;
     margin:26px 0 0;
     border-radius: 10px;
