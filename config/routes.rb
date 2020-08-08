@@ -12,10 +12,6 @@ Rails.application.routes.draw do
 
   root 'toppages#index'
 
-  # resources :transactions do
-  #   get 'buy', to:'card#show'
-  # end
-
   resources :mypages do
     collection do
       get 'index'

@@ -8,10 +8,10 @@
         .payment-info-wrapper-child__cardnumber
           = "カード番号：""**** **** **** " + @default_card_information.last4
 
-        .payment-info-wrapper-child__carddate
+        %p.payment-info-wrapper-child__carddate
           - exp_month = @default_card_information.exp_month.to_s
           - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-          = "有効期限：" + exp_month + " / " + exp_year
+          = "カード有効期限：" + "20" + exp_year + "年" + exp_month + "月"
 
         = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
           %input{ type: "hidden", name: "card_id", value: "" }

@@ -7,9 +7,6 @@ class ItemsController < ApplicationController
     @items = Item.includes(:images).order('created_at DESC')
   end
 
-  def show
-  end
-
   def new
     @item = Item.new
     @item.images.new
@@ -32,22 +29,6 @@ class ItemsController < ApplicationController
     @user = User.find_by(id: @item.user_id)
     @categories = Category.find(params[:id])
   end
-
-
-
-  def destroy
-    Item.find(params[:id]).destroy
-    redirect_to root_path
-  end
-
-  def done
-    @item = Item.find([:id])
-    def destroy
-      Item.find(params[:id]).destroy
-      redirect_to done_items_path
-    end
-  end
-
 
   def edit
     grandchild = @item.category
@@ -93,6 +74,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+       @item = Item.find(params[:id])
+    if @item.user.id == current_user.id && @item.destroy
+       redirect_to root_path
+    else
+      redirect_to item_path(item.id)
+      flash.now[:alert] = '商品の削除に失敗しました'
+    end
+  end
 
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children

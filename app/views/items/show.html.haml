@@ -82,13 +82,15 @@
                   不適切な商品の通報
           -if user_signed_in? && current_user.id == @item.user_id
             .my_page_btn
-              = link_to edit_item_path(@item.id), class:"edit_btn" do
-                商品の編集
-              = link_to item_path,method: :delete, class: "destroy_btn" do
-                商品の削除
-          -elsif user_signed_in? && current_user.id != @item.user_id
+              = link_to "商品の編集", edit_item_path(@item.id), class:"edit_btn"
+              = link_to "商品の削除", item_path, method: :delete, class: "destroy_btn         
+          -elsif @item.buyer_id.present?
             .purchase
-              = link_to edit_item_path, class:"purchase_btn" do
+              = link_to root_path, class: "disabled-button" do
+                残念！売切れました
+          -else
+            .purchase
+              = link_to purchase_path, class:"purchase_btn" do
                 商品の購入
         .commentBox
           %ul.commentContents
