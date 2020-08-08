@@ -36,7 +36,18 @@ class ItemsController < ApplicationController
 
 
   def destroy
+    Item.find(params[:id]).destroy
+    redirect_to root_path
   end
+
+  def done
+    @item = Item.find([:id])
+    def destroy
+      Item.find(params[:id]).destroy
+      redirect_to done_items_path
+    end
+  end
+
 
   def edit
     grandchild = @item.category
@@ -102,8 +113,7 @@ class ItemsController < ApplicationController
   end
 
   def category_parent_array
-    @category_parent_array = Category.where(ancestry: nil).each do |parent|
-    end
+    @category_parent_array = Category.where(ancestry: nil)
   end
 
   def show_all_instance

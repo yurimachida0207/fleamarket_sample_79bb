@@ -84,7 +84,7 @@
             .my_page_btn
               = link_to edit_item_path(@item.id), class:"edit_btn" do
                 商品の編集
-              = link_to item_path(@item.id), method: :delete, class: "destroy_btn" do
+              = link_to item_path,method: :delete, class: "destroy_btn" do
                 商品の削除
           -elsif user_signed_in? && current_user.id != @item.user_id
             .purchase
