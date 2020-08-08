@@ -11,7 +11,7 @@
       .Login-form-inner
         = link_to "https://google.com/", class: "Login-form-inner__btn Login-form-inner__btn--google" do
           = icon('fab', 'google', class: "Login-form-inner__btn--icon")
-          Googleでログイン
+          Googleでログイン 
         = link_to "https://www.facebook.com/", class: "Login-form-inner__btn Login-form-inner__btn--facebook" do
           = icon('fab', 'facebook-square', class: "Login-form-inner__btn--icon")
           Facebookでログイン
@@ -22,12 +22,10 @@
         .Form__group
           = form_with model: @user, url: new_user_session_path, local: true do |f|
             = f.email_field :email, class: "Form__group--input-text", placeholder: "メールアドレス"
-        .Form__group
-          = form_with model: @user, url: new_user_session_path, local: true do |f|   
-            = f.password_field :password, class: "Form__group--input-text", placeholder: "パスワード"
-        .Form__button
-          = form_with model: @user, url: new_user_session_path, local: true do |f|    
-            = f.submit "ログイン", class:"Form__button--default"
+            .Form__group--box
+              = f.password_field :password, class: "Form__group--input-text", placeholder: "パスワード"
+            .Form__button
+              = f.submit "ログイン", class:"Form__button--default"
 
         = link_to new_user_password_path, class:"Form__coments" do
           パスワードをお忘れの方

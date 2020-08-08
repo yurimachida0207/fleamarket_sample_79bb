@@ -71,23 +71,33 @@ height: 910px;
   padding: 100px 30px 32px;
   height: 453px;
   &__group{
-    width: px;
     height: 60px;
     padding: 15px 20px 10px;
     border-radius: 8px;
     border: 1px solid;
     line-height: 20px;
     font-size: 16px;
-    background-color:white;
-    margin: 25px;
+    background-color: white;
+    margin: 25px; 
     &--input-text{
       border: none;
       padding: 3px 0 0 0;
     }   
+    &--box{
+      height: 58px;
+    padding: 15px 19px 8px;
+    border-radius: 8px;
+    border: 1px solid;
+    line-height: 20px;
+    font-size: 16px;
+    background-color: white;
+    margin: 50px -20px 5px -18px; 
+    }
   }
   &__button{
     display: block;
-    margin: 30px 20px 0;
+    margin: 30px -17px 5px;
+    padding: 20px 100px 18px;
     text-align: center;
     background-color: red;
     color: white;
@@ -107,7 +117,7 @@ height: 910px;
   }
   &__coments{
     display: block;
-    margin: 40px 0 0 17px;
+    margin: 210px 0 0 30px;
     color: blue;
     text-decoration: none;
   }

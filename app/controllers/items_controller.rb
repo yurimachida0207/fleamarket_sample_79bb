@@ -10,14 +10,17 @@ class ItemsController < ApplicationController
   end
    
   def destroy
-    if @item.destroy
-      redirect_to  destroy_mypages_path
+    @item = Item.find(params[:id])
+    if @item_user.id == current_user.id && item destroy
+      redirect_to done_items_path
     else
       flash.now[:alert] = '削除できませんでした'
       render :show
+    end
   end
-end
 
+  def done
+  end
 
   def new
     @item = Item.new
@@ -39,14 +42,12 @@ end
   def show
     @item = Item.find(params[:id])
     @items = Item.includes(:images)
-    @user = User.find(params[:id])
+    @user = User.find_by(id: @item.user_id)
     @categories = Category.find(params[:id])
   end
 
 
 
-  def destroy
-  end
 
   def edit
   end
@@ -76,5 +77,4 @@ end
   def set_item
     @item = Item.find(params[:id])
   end
-
 end
