@@ -1,0 +1,23 @@
+.createMain {
+  margin-top: 80px;
+  .createContainer {
+    width: 700px;
+    height: 120px;
+    margin: 0 auto;
+    background-color: #fff;
+    .createText {
+      font-size: 22px;
+      padding: 32px;
+      font-weight: 600;
+      text-align: center;
+    }
+    a {
+      text-decoration: none;
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+  }
