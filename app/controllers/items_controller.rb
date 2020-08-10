@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :category_parent_array, only: [ :edit]
   before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
   before_action :show_all_instance, only: [ :edit, :show, :destroy]
+  before_action :authenticate_user!, only: [:new, :destroy, :edit]
 
   def index
     @items = Item.includes(:images).order('created_at DESC')
@@ -18,11 +19,12 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
+      flash[:notice] = '出品が完了しました！'
     else
-      redirect_to new_item_path
+      flash[:alert] = '必須項目を入力してください'
+      render :new
     end
   end
- 
 
   def show
     @items = Item.includes(:images)
@@ -55,8 +57,8 @@ class ItemsController < ApplicationController
 
   def update
     if item_params[:images_attributes].nil?
-      flash.now[:alert] = '更新できませんでした 【画像を１枚以上入れてください】'
-      render :edit
+      flash[:alert] = '画像を１枚以上入れてください'
+      redirect_to edit_item_path
     else
       exit_ids = []
       item_params[:images_attributes].each do |a,b|
@@ -69,7 +71,7 @@ class ItemsController < ApplicationController
       if @item.update(item_params)
          redirect_to root_path
       else
-        flash.now[:alert] = '更新できませんでした'
+        flash[:alert] = '更新できませんでした'
         render :edit
       end
     end
