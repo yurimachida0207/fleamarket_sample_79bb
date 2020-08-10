@@ -54,6 +54,9 @@ body{
         }
         .l-single-inner{
           padding: 24px 16px 40px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           input{
             border: 0;
             outline: 0;
@@ -199,24 +202,27 @@ body{
                   background: #ea352d;
                 }
               }
-              .input-default.half1{
-                height: 48px;
-                padding: 10px 16px 8px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                background: #fff;
-                line-height: 1.5;
-                font-size: 16px;
-              }
-              .input-default.half2{
-                margin: 8px 20px 0;
-                height: 48px;
-                padding: 10px 16px 8px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                background: #fff;
-                line-height: 1.5;
-                font-size: 16px;
+              div{
+                display: flex;
+                .input-default.half1{
+                  height: 48px;
+                  padding: 10px 16px 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
+                .input-default.half2{
+                  margin: 0 20px;
+                  height: 48px;
+                  padding: 10px 16px 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
               }
             }
             .form-group.name-kana{
@@ -232,24 +238,27 @@ body{
                   background: #ea352d;
                 }
               }
-              .input-default.half3{
-                height: 48px;
-                padding: 10px 16px 8px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                background: #fff;
-                line-height: 1.5;
-                font-size: 16px;
-              }
-              .input-default.half4{
-                margin: 8px 20px 0;
-                height: 48px;
-                padding: 10px 16px 8px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                background: #fff;
-                line-height: 1.5;
-                font-size: 16px;
+              div{
+                display: flex;
+                .input-default.half3{
+                  height: 48px;
+                  padding: 10px 16px 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
+                .input-default.half4{
+                  margin: 0 20px;
+                  height: 48px;
+                  padding: 10px 16px 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
               }
             }
             .form-group.birthday{
@@ -341,7 +350,8 @@ body{
               p{
                 .identitiy{
                   color: #0099e8; 
-                  text-decoration: none;
+                  width: 100%;
+                  text-align: center;
                   .icon-arrow-right{
                     display: inline-block;
                     font-family: 'icon-font';
@@ -357,6 +367,10 @@ body{
             }
             .form-group.receptcha_term{
               margin: 24px 0 0;
+              background-color: #f5f5f5;
+              padding: 8px 16px;
+              width: 300px;
+              box-sizing: inherit;
               p{
                 color: #888888;
                 font-size: 12px;
@@ -372,49 +386,47 @@ body{
         }
       }
     }
-    .single-footer{
-      width: 456px;
-      height: 220px;
-      margin: 0 auto;
-      height: 250px;
-      padding: 40px 0;
-      text-align: center;
-      nav{
-        .clearfit{
-          font-size: 13px;
-          margin: 20px;
-          li{
-            display: inline-block;
-            .privacy-kana{
-              display: block;
-              color: #333;
-              text-decoration: none;
-            }
+  }
+  footer1.single-footer2{
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+    height: 250px;
+    padding: 40px 0;
+    text-align: center;
+    nav{
+      .clearfit{
+        font-size: 13px;
+        margin-top: 80px;
+        margin-bottom: 20px;
+        li{
+          display: inline-block;
+          .privacy-kana{
+            display: block;
+            color: #333;
+            text-decoration: none;
           }
-          li{
-            .mercari-kiyaku{
-              margin: 0 10px;
-              display: block;
-              color: #333;
-              text-decoration: none;
-            }
+        }
+        li{
+          .mercari-kiyaku{
+            margin: 0 10px;
+            display: block;
+            color: #333;
+            text-decoration: none;
           }
-          li{
-            .hyouki{
-              display: block;
-              color: #333;
-              text-decoration: none;
-            }
+        }
+        li{
+          .hyouki{
+            display: block;
+            color: #333;
+            text-decoration: none;
           }
         }
       }
-      .logo-footer2{
+      .logo-footer{
         width: 80px;
         height: 65px;
         margin: 40px auto 0;
-        .logo-gray2{
-          vertical-align: middle;
-        }
       }
       p{
         margin: 8px 0 0;
@@ -425,3 +437,4 @@ body{
     }
   }
 }
+

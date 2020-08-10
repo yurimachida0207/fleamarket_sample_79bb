@@ -31,6 +31,7 @@ class ItemsController < ApplicationController
     if user_signed_in?
      @hello_user = User.find(current_user.id)
     end
+    @categories = Category.find(params[:id])
   end
 
   def edit

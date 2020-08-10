@@ -1,8 +1,13 @@
 .Single__header{
   background-color:rgb(245, 245, 245);
   height: 90px;
-  text-align: center;
-  padding-top: 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--logo{
+    width: 20%;
+  }   
 }
 .Single-main{
   display: block;
@@ -16,10 +21,11 @@ background: antiquewhite;
 height: 910px;
 }
 .Login-no-account{
-  padding: 20px 64px;
+  padding: 28px 64px;
   text-align: center;
   &__p{
-    font-size: 14px;
+    font-size: 50px;
+    display: block;
   }
   &__Login{
     display: block;
@@ -27,18 +33,19 @@ height: 910px;
     background-color:blue;
     border: 1px solid;
     color: azure;
-    line-height: 40px;
+    line-height: 47px;
     text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
   }
 }
 .Login-form-inner{
   height: 262px;
-  padding: 25px 64px;
+  padding: 30px 64px;
   &__btn{
     display: block;
-    height: 68px;
     width :328px;
-    margin:25px 0 0;
+    margin:26px 0 0;
     border-radius: 10px;
     font-size:16px;
     color:#fff;
@@ -63,26 +70,36 @@ height: 910px;
   }
 }
 .Form{
-  padding: 15px 40px 32px;
+  padding: 100px 30px 32px;
   height: 453px;
   &__group{
-    width: px;
-    height: 38px;
-    padding: 10px 16px 14px;
+    height: 60px;
+    padding: 15px 20px 10px;
     border-radius: 8px;
     border: 1px solid;
-    line-height: 5px;
+    line-height: 20px;
     font-size: 16px;
-    background-color:white;
-    margin: 20px;
+    background-color: white;
+    margin: 25px; 
     &--input-text{
       border: none;
       padding: 3px 0 0 0;
     }   
+    &--box{
+      height: 58px;
+    padding: 15px 19px 8px;
+    border-radius: 8px;
+    border: 1px solid;
+    line-height: 20px;
+    font-size: 16px;
+    background-color: white;
+    margin: 50px -20px 5px -18px; 
+    }
   }
   &__button{
     display: block;
-    margin: 30px 16px 0;
+    margin: 30px -17px 5px;
+    padding: 20px 100px 18px;
     text-align: center;
     background-color: red;
     color: white;
@@ -93,10 +110,16 @@ height: 910px;
     transition: all;
     cursor: pointer;
     text-decoration: none;
+      &--default{
+        background-color: red;
+        color: white;
+        text-decoration: none;
+        border: 0px solid;
+      }
   }
   &__coments{
     display: block;
-    margin: 40px 0 0 17px;
+    margin: 210px 0 0 30px;
     color: blue;
     text-decoration: none;
   }
