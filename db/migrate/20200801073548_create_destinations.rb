@@ -11,6 +11,7 @@ class CreateDestinations < ActiveRecord::Migration[6.0]
       t.string :prefecture,           null: false
       t.string :address,              null:false
       t.string :second_address,       null:false
+      t.string :building_name
       t.timestamps
     end
   end

@@ -46,6 +46,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :prefecture,
       :address,
       :second_address,
+      :building_name
     )
   end
 
