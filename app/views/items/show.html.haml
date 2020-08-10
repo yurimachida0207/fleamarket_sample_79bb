@@ -18,7 +18,7 @@
                   = image_tag image.image.url, class: "image2"
           .itemBox__price
             %span1
-              = (@item.price / 0.9).floor
+              = @item.price.to_s(:delimited)
               円
             .priceDetail
               %span
