@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_08_03_065220) do
     t.string "prefecture", null: false
     t.string "address", null: false
     t.string "second_address", null: false
+    t.string "building_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_destinations_on_user_id"

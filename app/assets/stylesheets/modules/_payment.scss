@@ -1,11 +1,7 @@
-* {
-  box-sizing: border-box;
-}
-
 .payment-wrapper{
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  background-color: lightgray;
-  @include -height-width(700px, 100vw);
+  background-color: #f8f8f8;
+  @include -height-width(100vh, 100vw);
   display: flex;
 
   .contents-head{

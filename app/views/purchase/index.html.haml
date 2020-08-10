@@ -17,7 +17,7 @@
               //商品の名前
               = "　商品名　" + "#{@item.item_name}"
             .main__purchase-details__product__name-box__price
-              = "¥"+"#{@item.price}"+"(税込)"
+              = "¥"+"#{@item.price.to_s(:delimited)}"+"(税込)"
 
         .main__purchase-details__method-of-payment
           %h1 支払い方法
@@ -32,7 +32,7 @@
         .main__purchase-details__shipping-address
           %h1 配送先住所
           //3桁目と４桁目にハイフンをいれる
-          = @destination.zip_code.to_s.insert(3, '-')
+          = "〒" + @destination.zip_code.to_s.insert(3, '-')
           %br
           = @destination.prefecture
           = @destination.address

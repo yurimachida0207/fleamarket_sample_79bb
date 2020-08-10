@@ -90,6 +90,16 @@
           line-height: 32px;
         }
       }
+
+      &__item__hello {
+        list-style: none;
+        padding:9 0 0 0;
+        span{
+          color:red;
+        }
+        
+      }
+
     }
   }
  }

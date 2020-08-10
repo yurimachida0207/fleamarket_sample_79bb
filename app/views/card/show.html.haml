@@ -1,3 +1,4 @@
+= render "toppages/header"
 .payment-wrapper
   = render 'mypages/side_bar'
   .payment-info-head
@@ -16,3 +17,4 @@
         = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
           %input{ type: "hidden", name: "card_id", value: "" }
           %button カード情報を削除する
+= render 'toppages/footer'

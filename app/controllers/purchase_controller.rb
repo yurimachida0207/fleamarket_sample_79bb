@@ -4,12 +4,13 @@ class PurchaseController < ApplicationController
 
   def index
 
-    # 商品のデータベース情報をparamsで引っ張る
+    # 現在のitemIDの商品のデータベース情報をparamsで引っ張る
     @item = Item.find(params[:id])
-    # ユーザーの住所などの情報
-    @destination = Destination.where(user_id: current_user.id).first
-
-    card = Card.where(user_id: current_user.id).first
+    # ユーザーの住所などの情報。
+    if user_signed_in?
+      @destination = Destination.where(user_id: current_user.id).first
+      card = Card.where(user_id: current_user.id).first
+    end
     if card.blank?
       redirect_to controller: "card", action: "new"
     else
@@ -20,7 +21,7 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    # 商品のデータベース情報をparamsで引っ張る
+    # 現在のitemIDの商品のデータベース情報をparamsで引っ張る
     @item = Item.find(params[:id])
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = Rails.application.credentials[:payjp][:PAYJP_SECRET_KEY]

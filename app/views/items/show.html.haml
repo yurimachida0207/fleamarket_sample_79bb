@@ -86,12 +86,10 @@
               = link_to "商品の削除", item_path, method: :delete, class: "destroy_btn"         
           -elsif @item.buyer_id.present?
             .purchase
-              = link_to root_path, class: "disabled-button" do
-                残念！売切れました
+              = link_to "残念！売切れました", root_path, class: "disabled-button"                
           -else
             .purchase
-              = link_to purchase_path, class:"purchase_btn" do
-                商品の購入
+              = link_to "商品の購入", purchase_path, class:"purchase_btn"             
         .commentBox
           %ul.commentContents
           = form_with url:"#", local: true, class: "new_comment" do |f|

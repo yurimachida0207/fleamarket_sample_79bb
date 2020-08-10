@@ -34,6 +34,10 @@
               = f.label :second_address, "番地"
               %span.form-require 必須
               = f.text_field :second_address, placeholder:"1-123-4", class:"input-default"
+              %p.form-info-text
+              = f.label :second_address, "マンション・ビル名"
+              %span.form-require2 (任意)
+              = f.text_field :building_name, placeholder:"レオパレス六本木103号室", class:"input-default"
               .form-password-revelation-taggle
                 .form-password-revelation-revealed-password-container
                   %span.form-password-revelation-revealed-password

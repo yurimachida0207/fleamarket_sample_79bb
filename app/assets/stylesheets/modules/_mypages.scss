@@ -1,15 +1,11 @@
-* {
-  box-sizing: border-box;
-}
-
 .mypage-wrapper{
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  background-color: lightgray;
-  @include -height-width(700px, 100vw);
+  background-color: #f8f8f8;
+  @include -height-width(100vh, 100vw);
   display: flex;
 
   .contents{
-    @include -height-width(calc(100vh - 100px), calc(100vw - 700px));
+    @include -height-width(600px, calc(100vw - 700px));
     background-color: white;
     margin:50px 0px 0px 50px;
   }

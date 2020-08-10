@@ -27,6 +27,7 @@ class ItemsController < ApplicationController
   def show
     @items = Item.includes(:images)
     @user = User.find_by(id: @item.user_id)
+    @category = Category.find(params[:id])
     @categories = Category.find(params[:id])
   end
 
@@ -78,6 +79,7 @@ class ItemsController < ApplicationController
        @item = Item.find(params[:id])
     if @item.user.id == current_user.id && @item.destroy
        redirect_to root_path
+       flash.now[:alert] = '商品データを削除しました'
     else
       redirect_to item_path(item.id)
       flash.now[:alert] = '商品の削除に失敗しました'
