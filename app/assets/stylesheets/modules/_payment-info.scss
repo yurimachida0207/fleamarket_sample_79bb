@@ -1,5 +1,5 @@
 .payment-info-head{
-  @include -height-width(calc(100vh - 100px), calc(100vw - 700px));
+  @include -height-width(600px, calc(100vw - 700px));
   
   background-color: #fff;
   margin:50px 0px 0px 50px;
