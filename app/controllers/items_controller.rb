@@ -28,7 +28,6 @@ class ItemsController < ApplicationController
     @items = Item.includes(:images)
     @user = User.find_by(id: @item.user_id)
     @category = Category.find(params[:id])
-
     @categories = Category.find(params[:id])
   end
 
