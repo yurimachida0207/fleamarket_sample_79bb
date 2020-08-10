@@ -90,6 +90,10 @@
             =link_to '#', class: "AboutPriceLink" do
               = icon('far', 'question-circle', class: 'LinkIcon')
           .PriceSelectBox
+            （変更前の価格
+            .price 
+              = (@item.price / 0.9).floor
+              円）
             .PriceLabelBox
               %label 販売価格
               %span 必須
