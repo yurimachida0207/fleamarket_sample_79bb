@@ -84,10 +84,7 @@
             .my_page_btn
               = link_to "商品の編集", edit_item_path(@item.id), class:"edit_btn"
 
-              = link_to "商品の削除", item_path, method: :delete, class: "destroy_btn"
-
               = link_to "商品の削除", item_path, method: :delete, class: "destroy_btn"         
-
           -elsif @item.buyer_id.present?
             .purchase
               = link_to root_path, class: "disabled-button" do
