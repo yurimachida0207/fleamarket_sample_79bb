@@ -95,7 +95,7 @@
               %span 必須
             .Yen ¥
             .PriceFormBox
-              %input#price_calc.PriceSelect{placeholder: "0", type: "number"}/
+              %input#price_calc.PriceSelect{type: "number", value: @item.price}
         .SalesCommissionBox
           .CommissionTitle
             %p 販売手数料（10%)
