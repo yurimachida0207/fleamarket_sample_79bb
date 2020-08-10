@@ -18,7 +18,7 @@
                   = image_tag image.image.url, class: "image2"
           .itemBox__price
             %span1
-              = @item.price 
+              = @item.price.to_s(:delimited)
               円
             .priceDetail
               %span
@@ -83,7 +83,11 @@
           -if user_signed_in? && current_user.id == @item.user_id
             .my_page_btn
               = link_to "商品の編集", edit_item_path(@item.id), class:"edit_btn"
+
+              = link_to "商品の削除", item_path, method: :delete, class: "destroy_btn"
+
               = link_to "商品の削除", item_path, method: :delete, class: "destroy_btn"         
+
           -elsif @item.buyer_id.present?
             .purchase
               = link_to root_path, class: "disabled-button" do

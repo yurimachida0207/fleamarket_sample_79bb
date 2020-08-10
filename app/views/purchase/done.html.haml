@@ -6,9 +6,9 @@
     .done__wrapper__box__heading
       %h2 商品の購入が完了しました
     .done__wrapper__product-information
-      = "　商品名　" + "#{@item.item_name}"
+      = "商品名" + "#{@item.item_name}"
       %br
-      = "　¥"+"#{@item.price.to_s.insert(3,',')}"+"(税込)"
+      = "¥"+"#{@item.price.to_s(:delimited)}"+"(税込)"
       %br
       %br
       = link_to "トップページへ戻る", root_path(current_user)
