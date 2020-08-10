@@ -64,9 +64,9 @@
       %ul.listsRight
       - if user_signed_in?
         .listsRight__item__hello
-          -# こんにちは
-          -# -# %span #{@hello_user.nickname}
-          -# さん
+          こんにちは
+          %span #{current_user.nickname}
+          さん
         %li.listsRight__item.listsRight__item--login
           = link_to destroy_user_session_path, method: :delete do
             ログアウト

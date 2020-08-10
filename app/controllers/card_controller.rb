@@ -40,7 +40,6 @@ class CardController < ApplicationController
   end
 
   def show
-    @hello_user = User.find(current_user.id)
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new" 

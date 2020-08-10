@@ -21,9 +21,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create_destination
-    if user_signed_in?
-      @hello_user = User.find(current_user.id)
-    end
     @user = User.new(session["devise.regist_data"]["user"])
     @destination = Destination.new(destination_params)
     unless @destination.valid?
