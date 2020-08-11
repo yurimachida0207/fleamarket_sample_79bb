@@ -72,11 +72,11 @@
 |description|text|null: false|
 |brand|string||
 |condition|string|null: false|
-|postage_payer|string|null: false|
-|ship_from|string|null: false|
-|ship_preparation|string|null: false|
+|postage_id|string|null: false|
+|prefecture_id|string|null: false|
+|preparation_id|string|null: false|
 |price|string|null: false|
-|seller|integer|null: false|
+|user|integer|null: false|
 |buyer|integer||
 
 ### Association
