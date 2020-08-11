@@ -1,0 +1,9 @@
+= render "toppages/header"
+.delete-done
+  .delete-done__title
+    商品を削除しました
+    <meta http-equiv="Refresh" content="5; url=/toppages">
+    %p 5秒後にトップページへ移動します
+    = link_to 'トップページへ戻る', root_path, class: 'link'
+= render "toppages/footer"
+= render "toppages/purchaseBtn"

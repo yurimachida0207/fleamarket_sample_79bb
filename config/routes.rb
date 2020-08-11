@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
   resources :mypages do
     collection do
-      get 'index'
       get 'logout'
       get 'payment'
     end
@@ -32,7 +31,7 @@ Rails.application.routes.draw do
     member do
       post 'pay', to: 'purchase#pay'
       get 'index', to: 'purchase#index'
-      get 'done', to: 'purchase#done'
+      get 'done', to: 'purchase#done'      
     end
   end
 
@@ -45,7 +44,7 @@ Rails.application.routes.draw do
     collection do
       get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
       get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
-    
+      get 'delete',to: 'items#delete'
     end
   end
 end

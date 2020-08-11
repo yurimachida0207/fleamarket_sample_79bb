@@ -4,6 +4,8 @@ class MypagesController < ApplicationController
   end
 
   def show
+    @destination = Destination.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def logout

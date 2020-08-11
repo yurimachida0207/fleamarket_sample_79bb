@@ -9,7 +9,7 @@
             = image_tag item.images.first.image.url
               - if item.buyer_id.present?
               .items-box_photo__sold
-                .items-box_photo__sold__inner 
+                .items-box_photo__sold__inner
                   SOLD
           .list__body
             %h3.name
@@ -17,7 +17,9 @@
             .list__price
               %ul
                 %li
+
                   = (item.price / 0.9).floor
+
                   円
                 %li
                   %i.fa.fa-star.likeIcon 0

@@ -1,0 +1,22 @@
+.contents{
+  .mypage-contents__userinfo-head{
+    @include -height-width(50px, calc(100vw - 700px));
+    @include vertical-and-horizontal-center;
+    background-color: #fff;
+    border-bottom: 1px solid rgb(60,202,206);
+    align-items: center;
+    
+    h2 {
+      text-align: center;
+      font-size: 24px;
+    }
+  }
+
+  .mypage-contents__userinfo-wrapper{
+    margin:30px 0 0 30px;
+    h1.info{
+      font-weight: 900;
+      margin:30px 0 10px 0;
+    }
+  }
+}
