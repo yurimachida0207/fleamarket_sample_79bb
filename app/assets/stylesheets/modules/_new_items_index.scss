@@ -1,6 +1,7 @@
 .item__body {
   width: 100%;
   height: 100%;
+  overflow: scroll;
   &__title {
     padding: 30px;
     color: #3ccace;

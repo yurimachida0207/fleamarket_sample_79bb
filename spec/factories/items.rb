@@ -3,7 +3,7 @@ FactoryBot.define do
     item_name             {"fukinoto"}
     description           {"delicious"}
     condition_id          {1}
-    postage_payer         {1}
+    postage_id         {1}
     prefecture_id         {1}
     preparation_id        {1}
     price                 {3000}

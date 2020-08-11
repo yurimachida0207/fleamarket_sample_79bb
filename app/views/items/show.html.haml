@@ -18,7 +18,7 @@
                   = image_tag image.image.url, class: "image2"
           .itemBox__price
             %span1
-              = @item.price.to_s(:delimited)
+              = (@item.price / 0.9).floor
               円
             .priceDetail
               %span
@@ -37,13 +37,13 @@
                 %th カテゴリー
                 %td 
                   = link_to "#" do
-                    = @item.category.parent.parent.name
+                    = @item.category&.parent&.parent&.name
                     %br/
                   = link_to "#" do
-                    = @item.category.parent.name
+                    = @item.category&.parent&.name
                     %br/
                   = link_to "#" do
-                    = @item.category.name
+                    = @item.category&.name
                     %br/
               %tr
                 %th ブランド
@@ -59,7 +59,7 @@
               %tr
                 %th 配送料の負担
                 %td 
-                  = @item.postage_payer
+                  = @item.postage.name
               %tr
                 %th 発送元の地域
                 %td 
@@ -88,12 +88,10 @@
 
           -elsif @item.buyer_id.present?
             .purchase
-              = link_to root_path, class: "disabled-button" do
-                残念！売切れました
+              = link_to "残念！売切れました", root_path, class: "disabled-button"                
           -else
             .purchase
-              = link_to purchase_path, class:"purchase_btn" do
-                商品の購入
+              = link_to "商品の購入", purchase_path, class:"purchase_btn"             
         .commentBox
           %ul.commentContents
           = form_with url:"#", local: true, class: "new_comment" do |f|
