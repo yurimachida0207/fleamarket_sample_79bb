@@ -72,7 +72,7 @@
           %label 配送量の負担
           %span 必須
         .PostagePayerBox
-          = f.select :postage_payer, Item.postage_payers.keys, {}, {class: "SelectForm"}
+          = f.collection_select :postage_id, Postage.all, :id, :name,{include_blank: "選択してください"}, {class: "SelectForm"}
         .FormLabel
           %label 発送元の地域
           %span 必須
