@@ -6,6 +6,9 @@ class CardController < ApplicationController
     if user_signed_in?
       card = Card.where(user_id: current_user.id)
       redirect_to action: "show" if card.exists?
+    else
+      redirect_to new_login_path
+      flash[:notice] = '購入するにはログイン・新規登録してください'
     end
   end
 

@@ -1,6 +1,5 @@
+= render "/toppages/header"
 .wrapper
-  .header
-    = image_tag "/material/logo/logo.png", class: "furima-logo"
   .main
     .main__purchase-details
       .main__purchase-details__headline-box
@@ -15,7 +14,9 @@
           .main__purchase-details__product__name-box
             .main__purchase-details__product__name-box__name
               //商品の名前
-              = "　商品名　" + "#{@item.item_name}"
+              %h1 商品名
+              .main__purchase-details__product__name-box__name__itemname
+                = @item.item_name
             .main__purchase-details__product__name-box__price
               = "¥"+"#{@item.price.to_s(:delimited)}"+"(税込)"
 
@@ -32,14 +33,18 @@
         .main__purchase-details__shipping-address
           %h1 配送先住所
           //3桁目と４桁目にハイフンをいれる
-          = "〒" + @destination.zip_code.to_s.insert(3, '-')
-          %br
-          = @destination.prefecture
-          = @destination.address
-          = @destination.second_address
+          .main__purchase-details__shipping-address__wrapper
+            = "〒" + @destination.zip_code.to_s.insert(3, '-')
+            %br
+            = @destination.prefecture
+            = @destination.address
+            = @destination.second_address
+            %br
+            = @destination.building_name
             
 
         .main__purchase-details__buybtn-field
           .main__purchase-details__buybtn-field__buybtn
             = form_tag(action: :pay, method: :post) do
               %button.text-decoration 購入する
+= render "/toppages/footer"

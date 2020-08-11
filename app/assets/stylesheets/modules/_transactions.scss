@@ -2,26 +2,29 @@
   //フォントの指定
   font-family: "Arial","游ゴシック体","YuGothic","メイリオ","Meiryo","sans-serif";  
 
-  @include -height-width(100vh, 100vw);
+  @include -height-width(700px, 100vw);
   background-color: lightgray;
+  margin-top:20px;
   
-  .header{
+  .purchase-header{
     @include -height-width(100px, 100vw);
-    @include vertical-and-horizontal-center;
+    align-items: center;
+    // @include vertical-and-horizontal-center;
 
     .furima-logo{
-      @include -height-width(75%, 15%);
+      @include -height-width(60%, 20%);
+      
       object-fit: cover;
-      margin-top: 10px;
+      // margin-top: 10px;
     }
   }
 
   .main{
-    @include -height-width(860px, 100vw);
+    @include -height-width(700px, 100vw);
     display: flex;
     justify-content: center;
     &__purchase-details{
-      @include -height-width(750px, 700px);
+      @include -height-width(650px, 700px);
       background-color:white;
       display: flex;
       justify-content: center;
@@ -64,6 +67,16 @@
             left:100px;
             text-align: start;
             font-size: 12px;
+            margin-left: 10px;
+            h1 {
+              font-size:18px;
+              font-weight: 900;
+              margin-top:10px;
+            }
+            &__itemname{
+              font-size: 14px;
+              margin-top:10px;
+            }
           }
           //金額
           &__price{
@@ -100,7 +113,7 @@
       }
       //method-of-payment(支払い方法)
       &__method-of-payment{
-        @include -height-width(200px, 340px);
+        @include -height-width(140px, 340px);
         padding-top: 15px;
         padding-left: 5px;
         border-bottom: 1px solid rgb(60,202,206);
@@ -111,16 +124,17 @@
         }
 
         p.card{
-          margin:0 0 10px 0;
+          margin:0 0 5px 0;
+          line-height: 30px;
         }
 
         &__card{
           @include -height-width(90px, 250px);
-          margin-top: 30px;
+          margin-top: 20px;
           .card-icon{
             @include -height-width(30%, 30%);
             object-fit: cover;
-            margin-top: 10px;
+            margin-top: 5px;
           }
         }
       }
@@ -128,15 +142,17 @@
       &__shipping-address{
         @include -height-width(120px, 340px);
         border-bottom: 1px solid rgb(60,202,206);
-        margin-top: 20px;
-        margin-left: 5px;
+        padding-top: 15px;
+        padding-left: 5px;
         h1 {
-          font-weight: 900;
+          font-size: 18px;
+          font-weight: 600;
         }
-        p {
-          font-size: 14px;
-          font-weight: 400;
+        &__wrapper{
+          margin-top:20px;
+          line-height: 20px;
         }
+ 
       }
 
       //buybtn(購入ボタン)

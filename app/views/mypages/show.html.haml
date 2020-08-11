@@ -27,9 +27,13 @@
         .mypage-contents__userinfo-wrapper__address
           %h1.info 配送先住所
           = @destination.prefecture + @destination.address + @destination.second_address
+          = @destination.building_name
         .mypage-contents__userinfo-wrapper__phone_number
           %h1.info 連絡先(携帯電話)
           = "0" + @destination.phone_number.to_s[0..1] + "-" + @destination.phone_number.to_s[2..5] + "-" + @destination.phone_number.to_s[6..9]
+        .mypage-contents__userinfo-wrapper__email
+          %h1.info メールアドレス
+          = @user.email
 
 = render "toppages/footer"
 = render "toppages/purchaseBtn"
