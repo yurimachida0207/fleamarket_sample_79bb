@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :category_parent_array, only: [ :edit]
-  before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
+  before_action :set_item, except: [:index, :new, :create, :delete, :get_category_children, :get_category_grandchildren]
   before_action :show_all_instance, only: [ :edit, :show, :destroy]
 
   def index
@@ -76,15 +76,14 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-       @item = Item.find(params[:id])
     if @item.user.id == current_user.id && @item.destroy
-       redirect_to root_path
-       flash.now[:alert] = '商品データを削除しました'
+       redirect_to delete_items_path
     else
-      redirect_to item_path(item.id)
+      redirect_to item_path(@item.id)
       flash.now[:alert] = '商品の削除に失敗しました'
     end
   end
+
 
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children

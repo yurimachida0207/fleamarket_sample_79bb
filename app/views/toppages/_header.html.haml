@@ -71,8 +71,7 @@
           = link_to destroy_user_session_path, method: :delete do
             ログアウト
         %li.listsRight__item.listsRight__item--new    
-          = link_to '/mypages' do
-            マイページ
+          = link_to 'マイページ', mypage_path(current_user.id)
       - else
         .listsRight__item__hello
           こんにちは
