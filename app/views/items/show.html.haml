@@ -18,7 +18,7 @@
                   = image_tag image.image.url, class: "image2"
           .itemBox__price
             %span1
-              = (@item.price / 0.9).floor
+              = (@item.price / 0.9).floor.to_s(:delimited)
               円
             .priceDetail
               %span
@@ -91,7 +91,7 @@
               = link_to "残念！売切れました", root_path, class: "disabled-button"                
           -else
             .purchase
-              = link_to "商品の購入", purchase_path, class:"purchase_btn"             
+              = link_to "商品の購入", purchase_path, class:"purchase_btn","data-turbolinks": false             
         .commentBox
           %ul.commentContents
           = form_with url:"#", local: true, class: "new_comment" do |f|

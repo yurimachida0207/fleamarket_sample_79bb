@@ -108,7 +108,7 @@
                 .details
                   %ul
                     %li
-                      = (item.price / 0.9).floor
+                      = (item.price / 0.9).floor.to_s(:delimited)
                       円
                     %li
                       %i.fa.fa-star.likeIcon 0
@@ -135,7 +135,7 @@
                 .details
                   %ul
                     %li
-                      = (item.price / 0.9).floor
+                      = (item.price / 0.9).floor.to_s(:delimited)
                       円
                     %li
                       %i.fa.fa-star.likeIcon 0
