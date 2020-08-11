@@ -31,10 +31,10 @@ RSpec.describe Item, type: :model do
       expect(item.errors[:condition]).to include("can't be blank")
     end
 
-    it "is invalid without a postage_payer" do
-      item = build(:item, postage_payer: nil)
+    it "is invalid without a postage" do
+      item = build(:item, postage: nil)
       item.valid?
-      expect(item.errors[:postage_payer]).to include("can't be blank")
+      expect(item.errors[:postage]).to include("can't be blank")
     end
 
     it "is invalid without a prefecture" do
