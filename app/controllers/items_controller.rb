@@ -40,14 +40,14 @@ class ItemsController < ApplicationController
     if @category_id == 46 or @category_id == 74 or @category_id == 134 or @category_id == 142 or @category_id == 147 or @category_id == 150 or @category_id == 158
     else
       @parent_array = []
-      @parent_array << @item.category.parent.parent.name
-      @parent_array << @item.category.parent.parent.id
+      @parent_array << @item.category.parent&.parent&.name
+      @parent_array << @item.category.parent&.parent&.id
     
     end
-      @category_children_array = Category.where(ancestry: child.ancestry)
+      @category_children_array = Category.where(ancestry: child&.ancestry)
       @child_array = []
-      @child_array << child.name
-      @child_array << child.id
+      @child_array << child&.name
+      @child_array << child&.id
       
       @category_grandchildren_array = Category.where(ancestry: grandchild.ancestry)
       @grandchild_array = []
