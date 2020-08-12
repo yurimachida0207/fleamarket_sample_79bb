@@ -2,7 +2,9 @@
 .delete-done
   .delete-done__title
     商品を削除しました
-    <meta http-equiv="Refresh" content="5; url=/toppages">
+    -# <meta http-equiv="Refresh" content="5; url=/toppages">
+    //metaタグはiOSでは動作しないため、javaScriptに変更
+    %body{:onload => "setTimeout(\"location.href='/toppages'\",5000)"}
     %p 5秒後にトップページへ移動します
     = link_to 'トップページへ戻る', root_path, class: 'link'
 = render "toppages/footer"
