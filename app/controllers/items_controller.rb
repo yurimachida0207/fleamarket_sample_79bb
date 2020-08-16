@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :category_parent_array, only: [ :edit]
+  before_action :category_parent_array, only: [ :edit, :update]
   before_action :set_item, except: [:index, :new, :create, :delete, :get_category_children, :get_category_grandchildren]
-  before_action :show_all_instance, only: [ :edit, :show, :destroy]
+  before_action :show_all_instance, only: [ :edit, :show, :destroy, :update]
   before_action :authenticate_user!, only: [:new, :destroy, :edit]
 
   def index
@@ -37,17 +37,21 @@ class ItemsController < ApplicationController
     grandchild = @item.category
     child = grandchild.parent
 
-    if @category_id == 46 or @category_id == 74 or @category_id == 134 or @category_id == 142 or @category_id == 147 or @category_id == 150 or @category_id == 158
+    if  @category_parent.nil? || @category_child.nil? || @category_grandchild.nil?
+      flash[:alert] = 'この商品は必須項目が不十分のため編集できません。削除し出品をやり直してください。'
+      redirect_to item_path
+      
     else
+
       @parent_array = []
-      @parent_array << @item.category.parent&.parent&.name
-      @parent_array << @item.category.parent&.parent&.id
+      @parent_array << @item.category.parent.parent.name
+      @parent_array << @item.category.parent.parent.id
     
     end
       @category_children_array = Category.where(ancestry: child&.ancestry)
       @child_array = []
-      @child_array << child&.name
-      @child_array << child&.id
+      @child_array << child.name
+      @child_array << child.id
       
       @category_grandchildren_array = Category.where(ancestry: grandchild.ancestry)
       @grandchild_array = []
@@ -56,10 +60,13 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if item_params[:images_attributes].nil?
-      flash[:alert] = '画像を１枚以上入れてください'
-      redirect_to edit_item_path
-    else
+    if item_params[:images_attributes].nil? 
+      flash[:alert] = '画像は１枚以上入れてください。'
+      redirect_to edit_item_path  
+    elsif item_params[:category_id] == "---"
+      flash[:alert] = 'カテゴリーは全て選択してください'
+      redirect_to edit_item_path 
+    elsif
       exit_ids = []
       item_params[:images_attributes].each do |a,b|
         exit_ids << item_params[:images_attributes].dig(:"#{a}",:id).to_i
@@ -114,7 +121,7 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: params[:id])
     @images_first = Image.where(item_id: params[:id]).first
     @category_id = @item.category_id
-    @category_parent = Category.find(@category_id).parent&.parent
+    @category_parent = Category.find(@category_id).parent.parent
     @category_child = Category.find(@category_id).parent
     @category_grandchild = Category.find(@category_id)
   end

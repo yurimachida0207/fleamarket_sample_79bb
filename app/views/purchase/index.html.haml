@@ -18,7 +18,7 @@
               .main__purchase-details__product__name-box__name__itemname
                 = @item.item_name
             .main__purchase-details__product__name-box__price
-              = "¥"+"#{@item.price.to_s(:delimited)}"+"(税込)"
+              = "¥"+"#{(@item.price / 0.9).floor}"+"(税込)"
 
         .main__purchase-details__method-of-payment
           %h1 支払い方法
